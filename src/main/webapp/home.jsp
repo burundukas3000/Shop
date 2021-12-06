@@ -19,10 +19,10 @@
           <img src="/Shop/src/main/webapp/image/1.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/Shop/src/main/webapp/image/6954.jpg" class="d-block w-100" alt="...">
+          <img src="/Shop/src/main/webapp/image/1.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/Shop/src/main/webapp/image/7090.jpg" class="d-block w-100" alt="...">
+          <img src="/Shop/src/main/webapp/image/1.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
