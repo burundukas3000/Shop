@@ -1,9 +1,11 @@
+create database accenture;
+
 use accenture;
 --
 -- Table structure for table user
 -- Passwords are encrypted using BCrypt
 -- Passwords generated at: http://www.luv2code.com/generate-bcrypt-password
--- Passwords for created users: the same what username (e.g. uname: admin pssw: admin)°
+-- Passwords for created users: the same what username (e.g. uname: admin pssw: admin)
 --
 DROP TABLE IF EXISTS user;
 
@@ -20,8 +22,8 @@ CREATE TABLE IF NOT EXISTS user (
 --
 INSERT INTO user (email, password, username) VALUES 
 	('admin@gmail.com', '$2a$10$62AAhgEWKwHLzEs1k1dqEuwOVHIM2MgCbI.yzLbx./5m2md9StfAC','admin'),
-	('baiba.skujevsk@gmail.com', '$2a$10$LP9P5E3ATuVEQeFqHwwTgeUOX.GoAlem9iBPHafH9h/UyVpwkmsK6','tutor'),
-	('aprily@inbox.lv', '$2a$10$g5PdDPYzLcyrLJRuRwCSduGtLKEi595K0Y6PL00/v9HIZCFUyUjvy','student');
+	('baiba.skujevsk@gmail.com', '$2a$10$TZXYm3FwHbhLlGkmClsIpOnk7jQcOKe2Rt2ByHMUsTNC.u4alo5Gy','manager'),
+	('aprily@inbox.lv', '$2a$10$BPFrIEJvcjMY8oV2cQHYS.hqO9g6oAXKBqWOQtcT24GBRtBIw8rCq','customer');
 
 --
 -- Creating table for role
@@ -37,7 +39,7 @@ CREATE TABLE IF NOT EXISTS role (
 --
 
 INSERT INTO role VALUES 
-(1,'ROLE_ADMIN'),(2,'ROLE_TUTOR'),(3,'ROLE_STUDENT');
+(1,'ROLE_ADMIN'),(2,'ROLE_MANAGER'),(3,'ROLE_CUSTOMER');
 
 --
 -- Table structure for table users_roles
@@ -201,10 +203,6 @@ FROM purchase AS pur
         ON pur.id = pp.purchase_id
     LEFT JOIN product AS pr
         ON pp.product_id = pr.id;
-   
-   
-
-
-    
-    
         
+use accenture;
+SELECT * FROM role;
