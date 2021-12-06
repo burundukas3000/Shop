@@ -4,7 +4,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<title>KukuDuku | Home Page</title>
+<title>KukuDuku|Home Page</title>
 <%@ include file="jsp/header.jsp"%>
 </head>
 <body>
@@ -16,16 +16,17 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/Shop/src/main/webapp/image/1.jpg" class="d-block w-100" alt="...">
+          <img src="image/1.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/Shop/src/main/webapp/image/1.jpg" class="d-block w-100" alt="...">
+          <img src="image/1.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/Shop/src/main/webapp/image/1.jpg" class="d-block w-100" alt="...">
+          <img src="image/1.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <a class="carousel-control-prev" href="#carouselExampleControls"
+           role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
