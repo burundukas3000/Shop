@@ -13,10 +13,16 @@ public class Image {
     private byte[] content;
     private String name;
 
-    @ManyToOne
-    private Product product_id;
 
+    private Long product_id;
 
+    public Long getProduct_id() {
+        return product_id;
+    }
+
+    public void setProduct_id(Long product_id) {
+        this.product_id = product_id;
+    }
 
     public Image() {
     }
