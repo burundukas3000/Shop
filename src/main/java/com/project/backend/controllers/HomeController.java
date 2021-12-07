@@ -37,6 +37,7 @@ public class HomeController {
         return "error";
     }
 
+
     @GetMapping("/manager/customers")
     public String allCustomers(Model model) {
         List<User> customers = userService.findAllUsers();
@@ -45,11 +46,4 @@ public class HomeController {
         return "customers";
     }
 
-    @GetMapping("/manager")
-    public String getCustomers(Model model) {
-        List<User> customers = userService.findAllUsers();
-        System.out.println(customers.get(0).toString());
-        model.addAttribute("customers", customers);
-        return "customers";
-    }
 }

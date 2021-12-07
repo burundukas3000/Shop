@@ -24,7 +24,7 @@ public class ProductController {
 
     @GetMapping("/customer/createproduct")
     public String showUploadForm() {
-        return "imageuploadToDelete";
+        return "imageup";
     }
 
     @PostMapping("/customer/upload")
@@ -39,7 +39,7 @@ public class ProductController {
             Long id = imageRepo.save(uploadFile).getId();
             model.addAttribute("id", id);
         }
-        return "imageuploadToDelete";
+        return "imageup";
     }
 
     @GetMapping(value = "/customer/product/{id}")
