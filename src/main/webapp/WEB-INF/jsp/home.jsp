@@ -6,27 +6,17 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+    <link rel="stylesheet" href="css/style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP List Users Records</title>
 </head>
 <body>
 
 <div align="center">
-    <table border="1" cellpadding="5">
-        <caption><h2>List of users</h2></caption>
-        <tr>
-            <th>ID</th>
-            <th>UserName</th>
-            <th>Email</th>
-        </tr>
-        <c:forEach var="customer" items="${customers}">
-            <tr>
-                <td><c:out value="${customer.id}" /></td>
-                <td><c:out value="${customer.userName}" /></td>
-                <td><c:out value="${customer.email}" /></td>
-            </tr>
-        </c:forEach>
-    </table>
+    <h1>Home</h1>
+
+    <img src="images/ball.png" />
+
 </div>
 </body>
 </html>
