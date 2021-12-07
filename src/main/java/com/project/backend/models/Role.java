@@ -13,7 +13,6 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @NotNull
     @Column(name = "name")
     private String roleName;
@@ -25,7 +24,6 @@ public class Role {
     private Set<User> users = new HashSet<>();
 
     public Role() {
-
     }
 
     public Role(String role) {

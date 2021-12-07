@@ -29,7 +29,12 @@ public class HomeController {
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         model.addAttribute("name", username);
         model.addAttribute("role", authorities.toArray()[0]);
-        return "home.jsp";
+        return "home";
+    }
+
+    @GetMapping("/error")
+    public String error() {
+        return "error.jsp";
     }
 
     @GetMapping("/manager/customers")
@@ -37,7 +42,7 @@ public class HomeController {
         List<User> customers = userService.findAllUsers();
         System.out.println(customers.get(0).toString());
         model.addAttribute("customers", customers);
-        return "customers.jsp";
+        return "customers";
     }
 
     @GetMapping("/manager")
@@ -45,6 +50,6 @@ public class HomeController {
         List<User> customers = userService.findAllUsers();
         System.out.println(customers.get(0).toString());
         model.addAttribute("customers", customers);
-        return "customers.jsp";
+        return "customers";
     }
 }

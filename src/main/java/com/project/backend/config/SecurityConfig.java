@@ -2,6 +2,7 @@ package com.project.backend.config;
 
 import com.project.backend.services.UserServiceImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -35,13 +36,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/manager/customers").permitAll()
-                .and()
+        http.csrf().disable().cors().and()
+                .headers().httpStrictTransportSecurity().disable().and()
                 .authorizeRequests()
+                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                .antMatchers("/error").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/manager/**").hasRole("MANAGER")
-                .antMatchers("/customer/**").hasRole("CUSTOMER")
+                .antMatchers("/manager/**").hasAnyRole("MANAGER", "ADMIN")
+                .antMatchers("/customer/**").hasAnyRole("CUSTOMER", "ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().and()
