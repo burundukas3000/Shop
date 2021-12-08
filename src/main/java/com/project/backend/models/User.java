@@ -3,9 +3,7 @@ package com.project.backend.models;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "user")
@@ -21,14 +19,21 @@ public class User {
     private String password;
     @NotNull
     private String email;
+    @Column(name="first_name")
+    private String firstName;
+    @Column(name="last_name")
+    private String lastName;
+    private String address;
 
-    // one user can have many roles
+    @OneToMany(mappedBy="user")
+    private List<Purchase> purchases = new ArrayList<>();
+
+    // one user can have many roles. Bidirectional mapping.
     // fetchType = default -lazy. Setting to eager - getting roles when getting user.
     // cascade = all operations except DELETE are performed on associated table
-    @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH,
-            CascadeType.DETACH })
-    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
+    @ManyToMany(mappedBy="users", fetch = FetchType.EAGER,
+            cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH })
+    private Set<Role> roles = new HashSet<Role>();
 
     public User() {
     }
@@ -39,14 +44,18 @@ public class User {
         this.email = email;
     }
 
-    public User(String userName, String password, String email, Set<Role> roles) {
+    public User(String userName, String password, String email,
+                String firstName, String lastName, String address, Set<Role> roles) {
         this.userName = userName;
         this.password = password;
         this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
         this.roles = roles;
     }
 
-    // methods to add/delete role
+    // for @ManyToMany association - methods to add/delete role
     // returns true if success
     public boolean addRole(Role role) {
         boolean added = roles.add(role);
@@ -111,12 +120,39 @@ public class User {
         this.roles = roles;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", userName='" + userName + '\'' +
                 ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }
