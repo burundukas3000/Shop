@@ -34,7 +34,7 @@ public class HomeController {
 
     @GetMapping("/error")
     public String error() {
-        
+
         return "error";
     }
 
