@@ -26,9 +26,13 @@ public class TestController {
     @GetMapping("/test")
     public String showUploadForm() {
         Discount dis = discountRepo.getById(1l);
-       System.out.println(dis.toString());
+        System.out.println(dis.getPercentage());
+        dis.setPercentage(dis.getPercentage()+5);
+        discountRepo.save(dis);
+        dis=discountRepo.getById(1l);
+        System.out.println("new discount is: "+dis.getPercentage());
 
-        Image im = imageRepo.getById(1l);
+        /*Image im = imageRepo.getById(1l);
         System.out.println(im.toString());
 
         Product prod = productRepo.getById(1l);
@@ -41,7 +45,7 @@ public class TestController {
         System.out.println(role.toString());
 
         User user = userRepo.getById(1l);
-        System.out.println(user.toString());
+        System.out.println(user.toString());*/
 
         return "test";
     }
