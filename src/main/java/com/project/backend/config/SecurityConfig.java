@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().httpStrictTransportSecurity().disable().and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                .antMatchers("/test").permitAll()
                 .antMatchers("/error").permitAll()
                 .antMatchers("/manager/**").hasAnyRole("MANAGER", "ADMIN")
                 .antMatchers("/customer/**").hasAnyRole("CUSTOMER", "ADMIN")
