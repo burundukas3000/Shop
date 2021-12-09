@@ -13,16 +13,9 @@ public class Image {
     private byte[] content;
     private String name;
 
-
-    private Long product_id;
-
-    public Long getProduct_id() {
-        return product_id;
-    }
-
-    public void setProduct_id(Long product_id) {
-        this.product_id = product_id;
-    }
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     public Image() {
     }
@@ -54,5 +47,17 @@ public class Image {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Product getProduct() { return product; }
+
+    public void setProduct(Product product) { this.product = product; }
+
+    @Override
+    public String toString() {
+        return "Image{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

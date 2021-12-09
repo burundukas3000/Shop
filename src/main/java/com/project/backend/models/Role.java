@@ -17,11 +17,15 @@ public class Role {
     @Column(name = "name")
     private String roleName;
 
-    // one roleName can have many users
+    // one roleName can have many users and opposite. Bidirectional mapping
     // fetchType - default lazy. Getting related users by calling getter()
+    // cascade = all operations except DELETE are performed on associated table
     @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH,
-            CascadeType.DETACH }, mappedBy = "roles")
-    private Set<User> users = new HashSet<>();
+            CascadeType.DETACH })
+    @JoinTable(name="users_roles",
+                joinColumns = { @JoinColumn(name="role_id") },
+                inverseJoinColumns = { @JoinColumn(name="user_id")})
+    private Set<User> users = new HashSet<User>();
 
     public Role() {
     }
@@ -35,17 +39,17 @@ public class Role {
         this.users = users;
     }
 
-    // methods to add/delete applicant
+    // for @ManyToMany association - methods to add/delete customer
     // returns true if success
     public boolean addUser(User user) {
-        boolean added = users.add(user);
+        boolean added = this.users.add(user);
         boolean added2 = user.getRoles().add(this);
 
         return added && added2;
     }
 
     public boolean deleteUser(User user) {
-        boolean deleted = users.remove(user);
+        boolean deleted = this.users.remove(user);
         boolean deleted2 = user.getRoles().remove(this);
 
         return deleted && deleted2;

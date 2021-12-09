@@ -35,7 +35,6 @@ public class ProductController {
             Image uploadFile = new Image();
             uploadFile.setName(image.getOriginalFilename());
             uploadFile.setContent(image.getBytes());
-            uploadFile.setProduct_id(1l);
             Long id = imageRepo.save(uploadFile).getId();
             model.addAttribute("id", id);
         }
