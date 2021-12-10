@@ -26,7 +26,9 @@
             </tr>
         </table>
     </form>
+    just uploaded ${image.name}
     <td><img width="100" height="100" src="product/1"></td>
+
 
 </div>
 </body>

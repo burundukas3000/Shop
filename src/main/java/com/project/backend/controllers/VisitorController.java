@@ -1,6 +1,5 @@
 package com.project.backend.controllers;
 
-import com.project.backend.models.User;
 import com.project.backend.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -12,10 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Collection;
-import java.util.List;
 
 @Controller
-public class HomeController {
+public class VisitorController {
 
     @Autowired
     UserServiceImpl userService;
@@ -32,18 +30,5 @@ public class HomeController {
         return "home";
     }
 
-    @GetMapping("/error")
-    public String error() {
-
-        return "error";
-    }
-
-    @GetMapping("/manager/customers")
-    public String allCustomers(Model model) {
-        List<User> customers = userService.findAllUsers();
-        System.out.println(customers.get(0).toString());
-        model.addAttribute("customers", customers);
-        return "customers";
-    }
 
 }
