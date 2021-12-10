@@ -1,6 +1,7 @@
 package com.project.backend.config;
 
 import com.project.backend.services.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
@@ -18,6 +19,9 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    ShopAccessDeniedHandler shopAccessDeniedHandler;
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -48,7 +52,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/error").permitAll()
                 .antMatchers("/manager/**").hasAnyRole("MANAGER", "ADMIN")
                 .antMatchers("/customer/**").hasAnyRole("CUSTOMER", "ADMIN")
-                .anyRequest().authenticated()
+                .anyRequest().authenticated().and()
+                .exceptionHandling()
+                .accessDeniedHandler(shopAccessDeniedHandler)
                 .and()
                 .formLogin().and()
                 .httpBasic().and()
