@@ -52,12 +52,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/error").permitAll()
                 .antMatchers("/manager/**").hasAnyRole("MANAGER", "ADMIN")
                 .antMatchers("/customer/**").hasAnyRole("CUSTOMER", "ADMIN")
-                .anyRequest().authenticated().and()
+                .and()
                 .exceptionHandling()
                 .accessDeniedHandler(shopAccessDeniedHandler)
                 .and()
-                .formLogin().and()
-                .httpBasic().and()
+                .formLogin().loginPage("/login").and()
                 .logout()
                 .permitAll();
     }
