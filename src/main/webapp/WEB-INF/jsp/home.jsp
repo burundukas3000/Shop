@@ -8,6 +8,8 @@
     <%@ include file="header.jsp"%>
 </head>
 <body>
+
+<c:if test="${userin}">Hello, ${userName}</c:if>
 <div class="main-background"></div>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-indicators">

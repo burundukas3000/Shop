@@ -8,4 +8,12 @@ import java.util.List;
 public interface UserService extends UserDetailsService {
 
     List<User> findAllUsers();
+
+    User getByUserName(String userName);
+
+    boolean saveUser(User user);
+
+    public boolean isLoggedIn();
+
+    public String loggedInUserName();
 }

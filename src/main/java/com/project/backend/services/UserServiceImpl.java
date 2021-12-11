@@ -2,12 +2,17 @@ package com.project.backend.services;
 
 import com.project.backend.models.Role;
 import com.project.backend.models.User;
+import com.project.backend.repositories.RoleRepository;
 import com.project.backend.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -20,6 +25,31 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepo;
+    @Autowired
+    private RoleRepository roleRepo;
+    @Autowired
+    private PasswordEncoder bcryptEncoder;
+
+    public User getByUserName(String userName) {
+        User user = userRepo.findByUserName(userName);
+        return user;
+    }
+
+    @Transactional
+    public boolean saveUser(User user) {
+        Role role = new Role();
+        boolean saved = false;
+
+        user.setPassword(bcryptEncoder.encode(user.getPassword()));
+        // by default role = USER
+        role = roleRepo.findRoleByRoleName("ROLE_CUSTOMER");
+        user.addRole(role);
+        userRepo.save(user);
+        if(userRepo.findByUserName(user.getUserName())!=null){
+            saved = true;
+        }
+        return saved;
+    }
 
     @Override
     @Transactional
@@ -39,6 +69,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAllUsers() {
         return userRepo.findAll();
+    }
+
+    public boolean isLoggedIn() {
+        return SecurityContextHolder.getContext().getAuthentication().isAuthenticated() &&
+                !SecurityContextHolder.getContext().getAuthentication().getName().equals("anonymousUser");
+    }
+
+    public String loggedInUserName() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
     }
 }
 

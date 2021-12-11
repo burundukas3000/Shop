@@ -2,6 +2,7 @@ package com.project.backend.controllers;
 
 import com.project.backend.models.User;
 import com.project.backend.repositories.ImageRepository;
+import com.project.backend.repositories.ProductRepository;
 import com.project.backend.services.UserServiceImpl;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,8 @@ public class ManagerController {
 
     @Autowired
     ImageRepository imageRepo;
+    @Autowired
+    ProductRepository productRepo;
 
     @Autowired
     UserServiceImpl userService;
@@ -34,5 +37,32 @@ public class ManagerController {
         System.out.println(customers.get(0).toString());
         model.addAttribute("customers", customers);
         return "customers";
+    }
+
+
+    @PostMapping("/customer/upload")
+    public String uploadImage(@RequestParam MultipartFile image, Model model) throws Exception {
+        if (image != null) {
+            System.out.println("Saving file: " + image.getOriginalFilename());
+
+            Image uploadFile = new Image();
+            uploadFile.setProduct(productRepo.getById(1l));
+            uploadFile.setName(image.getOriginalFilename());
+            uploadFile.setContent(image.getBytes());
+            Long id = imageRepo.save(uploadFile).getId();
+            List<Image> images = productRepo.getById(1l).getImages();
+            model.addAttribute("id", id);
+            model.addAttribute("image", images.get(images.size()-1));
+        }
+        return "imageup";
+    }
+
+    @GetMapping(value = "/customer/product/{id}")
+    public void getProductById(HttpServletResponse response, @PathVariable("id") Long id) throws Exception {
+        response.setContentType("image/jpeg");
+
+        byte[] bytes = imageRepo.getById(id).getContent();
+        InputStream inputStream = new ByteArrayInputStream(bytes);
+        IOUtils.copy(inputStream, response.getOutputStream());
     }
 }

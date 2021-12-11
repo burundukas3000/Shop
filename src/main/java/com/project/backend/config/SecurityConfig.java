@@ -51,12 +51,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/test").permitAll()
                 .antMatchers("/error").permitAll()
                 .antMatchers("/manager/**").hasAnyRole("MANAGER", "ADMIN")
-                .antMatchers("/customer/**").hasAnyRole("CUSTOMER", "ADMIN")
+                .antMatchers("/customer/**").hasAnyRole("CUSTOMER", "LYCUSTOMER", "ADMIN")
                 .and()
                 .exceptionHandling()
                 .accessDeniedHandler(shopAccessDeniedHandler)
                 .and()
-                .formLogin().loginPage("/login").and()
+                .formLogin().loginPage("/login")
+                .loginProcessingUrl("/authUser").and()
                 .logout()
                 .permitAll();
     }

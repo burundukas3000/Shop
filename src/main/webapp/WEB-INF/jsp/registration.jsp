@@ -1,103 +1,123 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Kukuduku | UserRegistration</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Registration Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .error { color: red }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        $( function() {
-            $( "#datepicker" ).datepicker({
-                dateFormat : 'mm/dd/yy',
-                changeMonth: true,
-                changeYear: true
+        $(document).ready(function() {
+            $("#username").change(function() {
+                $.ajax({
+                    url : 'registration/validateuser',
+                    data : {
+                        username : $("#username").val()
+                    },
+                    success : function(responseText) {
+                        $("#errmsg").text(responseText);
+                        if (responseText != "") {
+                            $("#username").focus();
+                        }
+                    }
+                });
             });
-        } );
+        });
     </script>
 </head>
 <body>
-<%@ include file="header.jsp"%>
-<main class="login-form">
-    <div class="cotainer">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">
-                        User Registration
+<div>
+    <div id="loginbox" style="margin-top: 50px;" class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">Register New User</div>
+            </div>
+            <div style="padding-top: 30px" class="panel-body">
+                <!-- Registration Form -->
+                <form:form
+                        action="${pageContext.request.contextPath}/registration/processform"
+                        modelAttribute="user" class="form-horizontal">
+                    <!-- Place for error -->
+                    <div class="form-group">
+                        <div class="col-xs-15">
+                            <div>
+                                <!-- Check for registration error -->
+                                <c:if test="${errorWarning != null}">
+                                    <div class="alert alert-danger col-xs-offset-1 col-xs-10">
+                                            ${errorWarning}</div>
 
+                                </c:if>
+                                <!-- Check if username exists -->
+                                <span class="error" id="errmsg"></span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="card-body">
-
-                        <form action="" method="post">
-
-                            <div class="form-group row">
-                                <label for="email_address"
-                                       class="col-md-4 col-form-label text-md-right">First Name<font color="red"></font></label>
-                                <div class="col-md-6">
-                                    <input type="text"   class="form-control" placeholder="Enter First Name"
-                                           name="firstName" value="" >
-                                    <font  color="red"></font>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="email_address"
-                                       class="col-md-4 col-form-label text-md-right">Last Name<font color="red"></font></label>
-                                <div class="col-md-6">
-                                    <input type="text"   class="form-control" placeholder="Enter Last Name"
-                                           name="lastName" value="" >
-                                    <font  color="red"></font>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="email_address"
-                                       class="col-md-4 col-form-label text-md-right">Email<font color="red"></font></label>
-                                <div class="col-md-6">
-                                    <input type="text" id="email_address"  class="form-control" placeholder="Enter Email"
-                                           name="login" value="" >
-                                    <font  color="red"></font>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="email_address"
-                                       class="col-md-4 col-form-label text-md-right">Mobile No.<font color="red"></font></label>
-                                <div class="col-md-6">
-                                    <input type="text" id="email_address"  class="form-control" placeholder="Enter Mobile No"
-                                           name="mobile" value="" >
-                                    <font  color="red"></font>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="email_address"
-                                       class="col-md-4 col-form-label text-md-right">Password<font color="red"></font></label>
-                                <div class="col-md-6">
-                                    <input type="password" id="email_address"  class="form-control" placeholder="Enter password"
-                                           name="password" value="" >
-                                    <font  color="red"></font>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 offset-md-4">
-                                <input type="submit" class="btn btn-primary" name="operation" value="Register">
-
-                            </div>
-                        </form>
+                    <!-- User name -->
+                    <div style="margin-bottom: 25px" class="input-group">
+							<span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-user"></i></span>
+                        <form:errors path="username" cssClass="error" />
+                        <form:input path="username" placeholder="username (*)"
+                                    class="form-control" id="username" />
                     </div>
-                </div>
+                    <!-- Password -->
+                    <div style="margin-bottom: 25px" class="input-group">
+							<span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-lock"></i></span>
+                        <form:errors path="password" cssClass="error" />
+                        <form:password path="password" placeholder="password (*)"
+                                       class="form-control" />
+                    </div>
+                    <!-- Email -->
+                    <div style="margin-bottom: 25px" class="input-group">
+							<span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-user"></i></span>
+                        <form:errors path="email" cssClass="error" />
+                        <form:input path="email" placeholder="email (*)"
+                                    class="form-control" />
+                    </div>
+                    <!-- First Name -->
+                    <div style="margin-bottom: 25px" class="input-group">
+							<span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-user"></i></span>
+                        <form:errors path="firstName" cssClass="error" />
+                        <form:input path="firstName" placeholder="first name (*)"
+                                    class="form-control" />
+                    </div>
+                    <!-- Last Name -->
+                    <div style="margin-bottom: 25px" class="input-group">
+							<span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-user"></i></span>
+                        <form:errors path="lastName" cssClass="error" />
+                        <form:input path="lastName" placeholder="lastname (*)"
+                                    class="form-control" />
+                    </div>
+                    <!-- Address -->
+                    <div style="margin-bottom: 25px" class="input-group">
+							<span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-user"></i></span>
+                        <form:errors path="address" cssClass="error" />
+                        <form:input path="address" placeholder="address (*)"
+                                    class="form-control" />
+                    </div>
+                    <!-- Register Button -->
+                    <div style="margin-top: 10px" class="form-group">
+                        <div class="col-sm-6 controls">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
+                </form:form>
             </div>
         </div>
     </div>
-</main>
-<div style="margin-top: 120px">
-    <%@ include file="footer.jsp"%>
 </div>
 </body>
 </html>

@@ -1,38 +1,121 @@
-<title>KukuDuku | Log In</title>
-<%@ include file="header.jsp"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <title>Login Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Reference Bootstrap files -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
 <body>
 
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-12 col-lg-11 col-xl-10">
-            <div class="card d-flex mx-auto my-5">
-                <div class="row">
-                    <div class="col-md-5 col-sm-12 col-xs-12 c1 p-5">
-                        <div class="row mb-5 m-3"> <img src="https://i.imgur.com/pFfTOwy.jpg" width="70vw" height="55vh" alt=""> </div> <img src="https://i.imgur.com/kdE7GKw.jpg" width="120vw" height="210vh" class="mx-auto d-flex" alt="Teacher">
-                        <div class="row justify-content-center">
-                            <div class="w-75 mx-md-5 mx-1 mx-sm-2 mb-5 mt-4 px-sm-5 px-md-2 px-xl-1 px-2">
-                                <h1 class="wlcm">Welcome to your blackboard</h1> <span class="sp1"> <span class="px-3 bg-danger rounded-pill"></span> <span class="ml-2 px-1 rounded-circle"></span> <span class="ml-2 px-1 rounded-circle"></span> </span>
+<div>
+
+    <div id="loginbox" style="margin-top: 50px;"
+         class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
+
+        <div class="panel panel-info">
+            <p><b>Register or log in as:</b></p>
+            <p><b>Customer:</b></p>
+            <p>username: customer</p>
+            <p><b>Manager:</b></p>
+            <p>username: manager</p>
+            <p><b>Loyal customer:</b></p>
+            <p>username: lycustomer</p>
+            <p><b>Password for all users:</b></p>
+            <p>the same as username</p>
+            <div class="panel-heading">
+                <div class="panel-title">Sign In</div>
+            </div>
+
+            <div style="padding-top: 30px" class="panel-body">
+
+                <!-- Login Form -->
+                <form:form action="${pageContext.request.contextPath}/authUser"
+                           method="POST" class="form-horizontal">
+
+                    <!-- Place for messages: error, alert etc ... -->
+                    <div class="form-group">
+                        <div class="col-xs-15">
+                            <div>
+
+                                <!-- Check for login error -->
+
+                                <c:if test="${param.error != null}">
+
+                                    <div class="alert alert-danger col-xs-offset-1 col-xs-10">
+                                        Invalid username and password.</div>
+
+                                </c:if>
+                                <c:if test="${param.logout != null}">
+
+                                    <div class="alert alert-success col-xs-offset-1 col-xs-10">
+                                        Invalid username and password.</div>
+
+                                </c:if>
+                                <!--
+                                <div class="alert alert-success col-xs-offset-1 col-xs-10">
+                                    You have been logged out.
+                                </div>
+                                -->
+
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-7 col-sm-12 col-xs-12 c2 px-5 pt-5">
-                        <div class="row">
-                            <nav class="nav font-weight-500 mb-1 mb-sm-2 mb-lg-5 px-sm-2 px-lg-5"> <a class="nav-link" href="#">Careers</a> <a class="nav-link ac" href="#">Students</a> <a class="nav-link" href="#">Admission</a> </nav>
-                        </div>
-                        <form onsubmit="event.preventDefault()" name="myform" onsubmit="" class="px-5 pb-5">
-                            <div class="d-flex"> <img src="https://i.imgur.com/oGcceAH.jpg" height="22px" width="22px" alt="" class="mr-3 mt-2">
-                                <h3 class="font-weight-bold">Log in</h3>
-                            </div> <input type="text" name="userid" placeholder="User"> <input type="password" name="passw" placeholder="Password"> <span class="ac" id="forgot">Forgot?</span> <button class="text-white text-weight-bold bt">Continue</button>
-                            <h5 class="ac" id="register">Register</h5>
-                        </form>
+
+                    <!-- User name -->
+                    <div style="margin-bottom: 25px" class="input-group">
+							<span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-user"></i></span> <input type="text"
+                                                                                        name="username" placeholder="username" class="form-control">
                     </div>
-                </div>
+
+                    <!-- Password -->
+                    <div style="margin-bottom: 25px" class="input-group">
+							<span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-lock"></i></span> <input type="password"
+                                                                                        name="password" placeholder="password" class="form-control">
+                    </div>
+
+                    <!-- Login/Submit Button -->
+                    <div style="margin-top: 10px" class="form-group">
+                        <div class="col-sm-6 controls">
+                            <button type="submit" class="btn btn-success">Login</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a
+                                href="${pageContext.request.contextPath}/registration"
+                                class="btn btn-primary" role="button" aria-pressed="true">
+                            Register </a>
+                    </div>
+
+                </form:form>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
 
 </body>
-<div style="margin-top: 170px">
-    <%@ include file="footer.jsp"%>
-</div>
+</html>
