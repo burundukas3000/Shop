@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Clothes and accessories</h5>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="${pageContext.request.contextPath}/products/category/clothes" class="btn btn-primary">View Clothes</a>
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@ package com.project.backend.services;
 import com.project.backend.models.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import java.security.Principal;
 import java.util.List;
 
 public interface UserService extends UserDetailsService {
@@ -13,7 +14,11 @@ public interface UserService extends UserDetailsService {
 
     boolean saveUser(User user);
 
-    public boolean isLoggedIn();
+    boolean isLoggedIn();
 
-    public String loggedInUserName();
+    String loggedInUserName();
+
+    User loggedInUser();
+
+    boolean hasRole(String role);
 }

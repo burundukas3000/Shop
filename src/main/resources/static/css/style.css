@@ -1,3 +1,4 @@
+
 .home-content-wrapper{
     background-image: url("../images/3.jpg");
     background-size: cover;
@@ -46,6 +47,7 @@
 .conteiner{
     width: 1200px;
     margin: 0px auto;
+    position: absolute;
 }
 
 

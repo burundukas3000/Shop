@@ -20,6 +20,11 @@ public class Product {
     private String title;
     @NotNull
     private BigDecimal price;
+    // not for DB use
+    @Transient
+    private BigDecimal happyPrice;
+    @Transient
+    private BigDecimal loyalPrice;
     @NotNull
     private String info;
     @NotNull
@@ -27,7 +32,7 @@ public class Product {
     @Enumerated(EnumType.STRING)
     @NotNull
     private Category category;
-    @OneToMany(mappedBy="product")
+    @OneToMany(fetch=FetchType.EAGER, mappedBy="product")
     private List<Image> images = new ArrayList<>();
     @ManyToOne
     @JoinColumn(name = "discount_id")
@@ -142,6 +147,14 @@ public class Product {
     public void setDiscount(Discount discount) {
         this.discount = discount;
     }
+
+    public BigDecimal getHappyPrice() { return happyPrice; }
+
+    public void setHappyPrice(BigDecimal happyPrice) { this.happyPrice = happyPrice; }
+
+    public BigDecimal getLoyalPrice() { return loyalPrice; }
+
+    public void setLoyalPrice(BigDecimal loyalPrice) { this.loyalPrice = loyalPrice; }
 
     @Override
     public String toString() {

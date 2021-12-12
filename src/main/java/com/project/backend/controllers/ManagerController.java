@@ -20,7 +20,7 @@ import java.io.InputStream;
 import java.sql.Blob;
 import java.util.List;
 
-@Controller("/manager")
+@Controller
 public class ManagerController {
 
     @Autowired
@@ -39,25 +39,28 @@ public class ManagerController {
         return "customers";
     }
 
+    @GetMapping("/manager/createproduct")
+    public String showUploadForm() {
+        return "imageup";
+    }
 
-    @PostMapping("/customer/upload")
+    @PostMapping("/manager/upload")
     public String uploadImage(@RequestParam MultipartFile image, Model model) throws Exception {
         if (image != null) {
             System.out.println("Saving file: " + image.getOriginalFilename());
-
             Image uploadFile = new Image();
-            uploadFile.setProduct(productRepo.getById(1l));
+            uploadFile.setProduct(productRepo.getById(3l));
             uploadFile.setName(image.getOriginalFilename());
             uploadFile.setContent(image.getBytes());
             Long id = imageRepo.save(uploadFile).getId();
-            List<Image> images = productRepo.getById(1l).getImages();
+            List<Image> images = productRepo.getById(3l).getImages();
             model.addAttribute("id", id);
             model.addAttribute("image", images.get(images.size()-1));
         }
         return "imageup";
     }
 
-    @GetMapping(value = "/customer/product/{id}")
+    @GetMapping(value = "/manager/product/{id}")
     public void getProductById(HttpServletResponse response, @PathVariable("id") Long id) throws Exception {
         response.setContentType("image/jpeg");
 

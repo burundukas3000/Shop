@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.security.Principal;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -79,6 +80,33 @@ public class UserServiceImpl implements UserService {
     public String loggedInUserName() {
         return SecurityContextHolder.getContext().getAuthentication().getName();
     }
+
+    public User loggedInUser() {
+        System.out.println(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString()+"************* getAuthentication().getPrincipal() - Principal.toString()");
+        System.out.println(SecurityContextHolder.getContext().getAuthentication()+" .getAuthentication()");
+        User user = null;
+        if(isLoggedIn()) {
+            user = userRepo.findByUserName(SecurityContextHolder.getContext().getAuthentication().getName());
+        }
+        return user;
+    }
+
+    public final boolean hasRole(String role) {
+        boolean hasRole = false;
+        UserDetails userDetails = loadUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        if (userDetails != null) {
+            if (isRolePresent((Collection<GrantedAuthority>) userDetails.getAuthorities(), role)) {
+                hasRole = true;
+            }
+        }
+        return hasRole;
+    }
+    private boolean isRolePresent(Collection<GrantedAuthority> authorities, String role) {
+        boolean isRolePresent = false;
+        for (GrantedAuthority grantedAuthority : authorities) {
+            isRolePresent = grantedAuthority.getAuthority().equals(role);
+            if (isRolePresent) break;
+        }
+        return isRolePresent;
+    }
 }
-
-

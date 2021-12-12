@@ -12,15 +12,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import com.project.backend.models.Image;
-import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.List;
 
 // Controller for Logged In User
-@Controller("/customer")
+@Controller
 public class CustomerController {
 
     @Autowired
@@ -54,10 +49,5 @@ public class CustomerController {
         Purchase purchase = purchaseService.getByPurchaseId(id);
         model.addAttribute("purchase", purchase);
         return "purchase";
-    }
-
-    @GetMapping("/customer/createproduct")
-    public String showUploadForm() {
-        return "imageup";
     }
 }
