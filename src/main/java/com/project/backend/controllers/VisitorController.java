@@ -1,14 +1,25 @@
 package com.project.backend.controllers;
 
+import com.project.backend.models.Image;
+import com.project.backend.models.Product;
+import com.project.backend.models.Purchase;
 import com.project.backend.models.User;
+import com.project.backend.services.ImageService;
+import com.project.backend.services.ProductService;
 import com.project.backend.services.UserService;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.List;
 import java.util.logging.Logger;
 
 @Controller
@@ -18,6 +29,12 @@ public class VisitorController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    ProductService productService;
+
+    @Autowired
+    ImageService imageService;
 
     @GetMapping("/")
     public String basic(Model model) {
@@ -56,6 +73,29 @@ public class VisitorController {
     @GetMapping("/product")
     public String product() {return "product";}
 
+    @GetMapping("/products/category/{name}")
+    public String productsByCategory(@PathVariable("name") String name, Model model) {
+        List<Product> products = productService.findByCategory(name);
+        model.addAttribute("products", products);
+        return "products";
+    }
+
+    // Converting image for each category display picture in the list
+    @GetMapping(value = "/products/category/images/display/{id}")
+    public void getProductById(HttpServletResponse response, @PathVariable("id") Long id) throws Exception {
+        response.setContentType("image/jpeg");
+
+        byte[] bytes = imageService.getById(id).getContent();
+        InputStream inputStream = new ByteArrayInputStream(bytes);
+        IOUtils.copy(inputStream, response.getOutputStream());
+    }
+
+    @GetMapping("/products/category/topsold/{name}")
+    public String productsByCategoryByTopSale(@PathVariable("name") String name, Model model) {
+        // hibernate method to get additional fields from joint table
+        return "products";
+    }
+
     // registration pages
     @GetMapping("/registration")
     public String showRegister(Model model) {
@@ -75,6 +115,7 @@ public class VisitorController {
         return mssg;
     }
 
+    // where spring security forwards when processing registration form
     @PostMapping("/registration/processform")
     public String sumbitRegistration(@ModelAttribute("user") User user, BindingResult br, Model model) {
 

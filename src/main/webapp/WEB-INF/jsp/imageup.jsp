@@ -18,18 +18,11 @@
                 <td><input type="file" name="image" size="50" /></td>
             </tr>
             <tr>
-                <td>Pick file #2:</td>
-                <td><input type="file" name="fileUpload" size="50" /></td>
-            </tr>
-            <tr>
                 <td colspan="2" align="center"><input type="submit" value="Upload" /></td>
             </tr>
         </table>
     </form>
     just uploaded ${image.name}
-    <td><img width="100" height="100" src="product/1"></td>
-
-
 </div>
 </body>
 </html>
