@@ -9,5 +9,11 @@ public interface ProductService {
 
     List<Product> findByCategory(String category);
 
+    Product findProductById(Long id);
+
+    void addDiscountToProducts(List<Product> products);
+
+    void removeDiscountFromProduct(Long id);
+
     // List<Product> getTopSoldProductsByCategory(String category);
 }

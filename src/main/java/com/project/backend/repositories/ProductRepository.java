@@ -7,11 +7,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
     List<Product> findProductByCategory(Category category);
+
+    Optional<Product> findById(Long id);
+
 
     // method works in SQL but doesn't in Hibernate because no @Entity mapping for joint table. How to get additional fields
     // from joint table?

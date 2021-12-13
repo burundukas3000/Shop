@@ -1,9 +1,7 @@
 package com.project.backend.controllers;
 
-import com.project.backend.models.Image;
-import com.project.backend.models.Product;
-import com.project.backend.models.Purchase;
-import com.project.backend.models.User;
+import com.project.backend.models.*;
+import com.project.backend.services.DiscountService;
 import com.project.backend.services.ImageService;
 import com.project.backend.services.ProductService;
 import com.project.backend.services.UserService;
@@ -19,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -29,12 +28,12 @@ public class VisitorController {
 
     @Autowired
     UserService userService;
-
     @Autowired
     ProductService productService;
-
     @Autowired
     ImageService imageService;
+    @Autowired
+    DiscountService discountService;
 
     @GetMapping("/")
     public String basic(Model model) {
@@ -73,15 +72,29 @@ public class VisitorController {
     @GetMapping("/product")
     public String product() {return "product";}
 
+    // View all products within category
     @GetMapping("/products/category/{name}")
     public String productsByCategory(@PathVariable("name") String name, Model model) {
         List<Product> products = productService.findByCategory(name);
-        model.addAttribute("products", products);
+        ProductListContainer productList = new ProductListContainer();
+        productList.setProducts(products);
+        model.addAttribute("Products", productList);
+        List<Discount> discounts = discountService.getAllDiscounts();
+        model.addAttribute("listOfDiscounts", discounts);
         return "products";
     }
 
+    // View one product by Id
+    @GetMapping("/product/{id}")
+    public String productsByCategoryById(@PathVariable("id") Long id, Model model) {
+        Product product = productService.findProductById(id);
+        model.addAttribute("product", product);
+        return "product";
+    }
+
     // Converting image for each category display picture in the list
-    @GetMapping(value = "/products/category/images/display/{id}")
+    @GetMapping(value = {"/products/category/image/{id}","/product/image/{id}", "products/image/{id}",
+            "/product/removediscount/image/{id}"})
     public void getProductById(HttpServletResponse response, @PathVariable("id") Long id) throws Exception {
         response.setContentType("image/jpeg");
 
@@ -136,6 +149,12 @@ public class VisitorController {
         logger.info("Successfully created user: " + user.getUsername()+ " "+saved);
         model.addAttribute("userName", user.getUsername());
         model.addAttribute("userin", userService.isLoggedIn());
+        return "home";
+    }
+
+    @PostMapping("/product/addtochart/{id}")
+    public String addToChart(@PathVariable("id") Long id, BindingResult br, Model model) {
+
         return "home";
     }
 }
