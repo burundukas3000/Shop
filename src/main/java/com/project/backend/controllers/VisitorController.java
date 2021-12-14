@@ -1,13 +1,13 @@
 package com.project.backend.controllers;
 
 import com.project.backend.models.*;
+import com.project.backend.rest.RestDogService;
 import com.project.backend.services.DiscountService;
 import com.project.backend.services.ImageService;
 import com.project.backend.services.ProductService;
 import com.project.backend.services.UserService;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -19,6 +19,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.logging.Logger;
 
 @Controller
@@ -34,6 +35,8 @@ public class VisitorController {
     ImageService imageService;
     @Autowired
     DiscountService discountService;
+    @Autowired
+    RestDogService restDogService;
 
     @GetMapping("/")
     public String basic(Model model) {
@@ -75,36 +78,21 @@ public class VisitorController {
     // View all products within category
     @GetMapping("/products/category/{name}")
     public String productsByCategory(@PathVariable("name") String name, Model model) {
-        List<Product> products = productService.findByCategory(name);
-        ProductListContainer productList = new ProductListContainer();
-        productList.setProducts(products);
-        model.addAttribute("Products", productList);
-        List<Discount> discounts = discountService.getAllDiscounts();
-        model.addAttribute("listOfDiscounts", discounts);
+       prepareModelForCategory(model, name, Mode.GENERAL);
         return "products";
     }
 
     // View all top sold products within category
     @GetMapping("/products/category/topsold/{name}")
     public String topSoldByCategory(@PathVariable("name") String name, Model model) {
-        List<Product> products = productService.getTopSoldProductsByCategory(name);
-        ProductListContainer productList = new ProductListContainer();
-        productList.setProducts(products);
-        model.addAttribute("Products", productList);
-        List<Discount> discounts = discountService.getAllDiscounts();
-        model.addAttribute("listOfDiscounts", discounts);
+        prepareModelForCategory(model, name, Mode.TOPSOLD);
         return "products";
     }
 
     // View all products withing category by price asc
     @GetMapping("/products/category/bypriceasc/{name}")
     public String byPriceAscCategory(@PathVariable("name") String name, Model model) {
-        List<Product> products = productService.getByPriceAscByCategory(name);
-        ProductListContainer productList = new ProductListContainer();
-        productList.setProducts(products);
-        model.addAttribute("Products", productList);
-        List<Discount> discounts = discountService.getAllDiscounts();
-        model.addAttribute("listOfDiscounts", discounts);
+        prepareModelForCategory(model, name, Mode.TOPSOLD);
         return "products";
     }
 
@@ -176,7 +164,29 @@ public class VisitorController {
 
     @PostMapping("/product/addtochart/{id}")
     public String addToChart(@PathVariable("id") Long id, BindingResult br, Model model) {
-
         return "home";
+    }
+
+    private Model prepareModelForCategory(Model model, String categoryName, Mode mode) {
+        List<Product> products = new ArrayList<>();
+        if(mode==Mode.GENERAL) {
+            products = productService.findByCategory(categoryName);
+        }
+        if(mode== Mode.PRISEASC) {
+            productService.getByPriceAscByCategory(categoryName);
+        }
+        if(mode == Mode.TOPSOLD) {
+            products = productService.getTopSoldProductsByCategory(categoryName);
+        }
+        ProductListContainer productList = new ProductListContainer();
+        productList.setProducts(products);
+        model.addAttribute("Products", productList);
+        List<Discount> discounts = discountService.getAllDiscounts();
+        model.addAttribute("listOfDiscounts", discounts);
+        if(categoryName.equals("accessories") || categoryName.equals("ACCESSORIES")) {
+            Random id = new Random();
+            model.addAttribute("dog", restDogService.getAllBreeds().get(id.nextInt(30)) );
+        }
+        return model;
     }
 }
