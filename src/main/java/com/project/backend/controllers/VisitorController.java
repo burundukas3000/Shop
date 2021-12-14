@@ -103,14 +103,15 @@ public class VisitorController {
     // check if user with username exists
     @RequestMapping("/registration/validateuser")
     public @ResponseBody
-    String validateApp(@RequestParam("username") String username, ModelMap model) {
+    String validateUserName(@RequestParam("username") String username, ModelMap model) {
         String mssg= null;
         User checkedUser = userService.getByUserName(username);
         if(checkedUser!=null) {
-            mssg="User with name: "+ checkedUser.getUsername() + " exists. ";
+            mssg="User with name: "+ checkedUser.getUsername() + " already exists. ";
         }
         return mssg;
     }
+
 
     // where spring security forwards when processing registration form
     @PostMapping("/registration/processform")
@@ -123,18 +124,14 @@ public class VisitorController {
         if (br.hasErrors()) {
             return "registration";
         }
-        // if user already exists
-        if (userService.getByUserName(userName) != null) {
-            model.addAttribute("user", new User());
-            model.addAttribute("errorWarning", "Username has been taken");
-            return "registration";
-        }
 
-        boolean saved = userService.saveUser(user);
-        logger.info("Successfully created user: " + user.getUsername()+ " "+saved);
-        model.addAttribute("userName", user.getUsername());
-        model.addAttribute("userin", userService.isLoggedIn());
-        return "home";
+        else {
+            boolean saved = userService.saveUser(user);
+            logger.info("Successfully created user: " + user.getUsername() + " " + saved);
+            model.addAttribute("userName", user.getUsername());
+            model.addAttribute("userin", userService.isLoggedIn());
+            return "home";
+        }
     }
 
 

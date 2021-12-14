@@ -1,5 +1,7 @@
 <title>KukuDuku | Shop</title>
 <%@ include file="header.jsp"%>
+<link rel="stylesheet" href="../CSS/style.css">
+<link rel="stylesheet" href="css/style.css">
 <div class="home-content-wrapper">
     <div class="overlay-box">
         <div class="container">
