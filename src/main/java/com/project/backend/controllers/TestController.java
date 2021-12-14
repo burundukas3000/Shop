@@ -2,7 +2,9 @@ package com.project.backend.controllers;
 
 import com.project.backend.models.*;
 import com.project.backend.repositories.*;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +29,8 @@ public class TestController {
     RoleRepository roleRepo;
     @Autowired
     UserRepository userRepo;
+    @Autowired
+    ChartItemRepository chartRepo;
 
     @GetMapping("/test")
     public String showUploadForm(Model model) {
@@ -59,6 +63,16 @@ public class TestController {
         for(Product p: topSoldList) {
             System.out.println("Product: "+ p.toString());
         }
+
+        // adding item for user in shopping chart
+        Product p = productRepo.findById(1l).get();
+        User u = userRepo.findById(3l).get();
+        ChartItem chartItem = new ChartItem();
+        chartItem.setProduct(p);
+        chartItem.setUser(u);
+        chartItem.setQuantity(5);
+        ChartItem savedItem = chartRepo.save(chartItem);
+        System.out.println("Saved item in Chart " + savedItem.toString());
 
 
         /*Image im = imageRepo.getById(1l);

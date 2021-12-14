@@ -66,9 +66,6 @@ public class VisitorController {
     @GetMapping("/contact")
     public String contact() {return "contact";}
 
-    @GetMapping("/cart")
-    public String cart() {return "cart";}
-
     @GetMapping("/iteam")
     public String iteam() {return "iteam";}
 
