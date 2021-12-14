@@ -12,6 +12,12 @@
 </head>
     <body>
         <div align="center">
+            <form:form action="${pageContext.request.contextPath}/products/category/topsold/${Products.products[0].category}" method="GET">
+                <input type="submit" value="sort by top sold products"/>
+            </form:form>
+            <form:form action="${pageContext.request.contextPath}/products/category/bypriceasc/${Products.products[0].category}" method="GET">
+                <input type="submit" value="sort by price asc"/>
+            </form:form>
             <form:form method = "POST" modelAttribute="Products" action = "/products/adddiscount">
                 <table border="1" cellpadding="5">
                     <caption><h2>Product List in ${Products.products[0].category}</h2></caption>

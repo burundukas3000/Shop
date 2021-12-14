@@ -15,5 +15,7 @@ public interface ProductService {
 
     void removeDiscountFromProduct(Long id);
 
-    // List<Product> getTopSoldProductsByCategory(String category);
+    List<Product> getTopSoldProductsByCategory(String category);
+
+    List<Product> getByPriceAscByCategory(String category);
 }

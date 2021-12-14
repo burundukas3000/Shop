@@ -19,9 +19,13 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     // method works in SQL but doesn't in Hibernate because no @Entity mapping for joint table. How to get additional fields
     // from joint table?
-/*    @Query("SELECT p.title, pp.amount FROM Product p JOIN purchases_products pp ON p.id=pp.product_id\n" +
-            "    WHERE p.category= :category\n" +
-            "    GROUP BY p.title\n" +
-            "    ORDER BY pp.amount DESC")
-    List<Product> getTopProductsByCategory(Category category);*/
+    @Query("FROM Product p \n" +
+            "JOIN PurchasesProducts pp ON p.id=pp.product.id\n" +
+            "            WHERE p.category=:category\n" +
+            "           GROUP BY p.title\n" +
+            "            ORDER BY pp.amount DESC")
+    List<Product> getTopProductsByCategory(Category category);
+
+    @Query("FROM Product p WHERE p.category=:category ORDER BY p.price ASC")
+    List<Product> getByPriceAscByCategory(Category category);
 }

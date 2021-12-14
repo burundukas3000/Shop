@@ -75,7 +75,22 @@ public class ProductServiceImpl implements ProductService {
         productRepo.save(p);
     }
 
-/*    public List<Product> getTopSoldProductsByCategory(String category) {
-        return productRepo.getTopProductsByCategory(Category.valueOf(category.toUpperCase(Locale.ROOT)));
-    }*/
+    public List<Product> getTopSoldProductsByCategory(String category) {
+
+        List<Product> topSold = productRepo.getTopProductsByCategory(Category.valueOf(category.toUpperCase(Locale.ROOT)));
+        for(Product product: topSold){
+            calculateDiscounts(product);
+        }
+        return topSold;
+    }
+
+    public List<Product> getByPriceAscByCategory(String category) {
+
+        List<Product> byPriceAsc = productRepo.getByPriceAscByCategory(Category.valueOf(category.toUpperCase(Locale.ROOT)));
+        for(Product product: byPriceAsc){
+            calculateDiscounts(product);
+        }
+        return byPriceAsc;
+    }
+
 }

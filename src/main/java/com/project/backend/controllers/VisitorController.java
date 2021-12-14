@@ -84,6 +84,30 @@ public class VisitorController {
         return "products";
     }
 
+    // View all top sold products within category
+    @GetMapping("/products/category/topsold/{name}")
+    public String topSoldByCategory(@PathVariable("name") String name, Model model) {
+        List<Product> products = productService.getTopSoldProductsByCategory(name);
+        ProductListContainer productList = new ProductListContainer();
+        productList.setProducts(products);
+        model.addAttribute("Products", productList);
+        List<Discount> discounts = discountService.getAllDiscounts();
+        model.addAttribute("listOfDiscounts", discounts);
+        return "products";
+    }
+
+    // View all products withing category by price asc
+    @GetMapping("/products/category/bypriceasc/{name}")
+    public String byPriceAscCategory(@PathVariable("name") String name, Model model) {
+        List<Product> products = productService.getByPriceAscByCategory(name);
+        ProductListContainer productList = new ProductListContainer();
+        productList.setProducts(products);
+        model.addAttribute("Products", productList);
+        List<Discount> discounts = discountService.getAllDiscounts();
+        model.addAttribute("listOfDiscounts", discounts);
+        return "products";
+    }
+
     // View one product by Id
     @GetMapping("/product/{id}")
     public String productsByCategoryById(@PathVariable("id") Long id, Model model) {
@@ -93,20 +117,18 @@ public class VisitorController {
     }
 
     // Converting image for each category display picture in the list
-    @GetMapping(value = {"/products/category/image/{id}","/product/image/{id}", "products/image/{id}",
-            "/product/removediscount/image/{id}"})
+    @GetMapping(value = {"/products/category/image/{id}",
+            "/product/image/{id}",
+            "products/image/{id}",
+            "/product/removediscount/image/{id}",
+            "/products/category/topsold/image/{id}",
+            "/products/category/bypriceasc/image/{id}"})
     public void getProductById(HttpServletResponse response, @PathVariable("id") Long id) throws Exception {
         response.setContentType("image/jpeg");
 
         byte[] bytes = imageService.getById(id).getContent();
         InputStream inputStream = new ByteArrayInputStream(bytes);
         IOUtils.copy(inputStream, response.getOutputStream());
-    }
-
-    @GetMapping("/products/category/topsold/{name}")
-    public String productsByCategoryByTopSale(@PathVariable("name") String name, Model model) {
-        // hibernate method to get additional fields from joint table
-        return "products";
     }
 
     // registration pages

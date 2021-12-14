@@ -22,6 +22,8 @@ public class TestController {
     @Autowired
     PurchaseRepository purchaseRepo;
     @Autowired
+    PurchasesProductsRepository ppRepo;
+    @Autowired
     RoleRepository roleRepo;
     @Autowired
     UserRepository userRepo;
@@ -36,6 +38,28 @@ public class TestController {
         System.out.println("new discount is: "+dis.getPercentage());
         List<User> cust = userRepo.findAll();
         model.addAttribute("customers",cust);
+
+        // Updating extra field in Associated Table (composite primary key + entity for associated table)
+        Purchase pur = purchaseRepo.getById(3l);
+        System.out.println("Purchase to be updated: " + pur);
+        Product pr = productRepo.getById(1l);
+        System.out.println("Product to be updated: "+ pr);
+            // getting entity from with composite primary key
+        PurchaseProductId id = new PurchaseProductId();
+        id.setPurchaseId(3l);
+        id.setProductId(1l);
+        PurchasesProducts pp = ppRepo.getById(id);
+            // changing amount
+        pp.setAmount(4);
+        System.out.println("Updated entity in associated table: " + pp);
+        ppRepo.save(pp);
+
+        // Getting extra field from associated table
+        List<Product> topSoldList = productRepo.getTopProductsByCategory(Category.TOYS);
+        for(Product p: topSoldList) {
+            System.out.println("Product: "+ p.toString());
+        }
+
 
         /*Image im = imageRepo.getById(1l);
         System.out.println(im.toString());
