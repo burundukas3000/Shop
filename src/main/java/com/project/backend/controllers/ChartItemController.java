@@ -20,7 +20,7 @@ import java.util.List;
 public class ChartItemController {
 
     @Autowired
-    ChartItemService chartService;
+    ChartItemService cartService;
     @Autowired
     UserService userService;
     @Autowired
@@ -29,20 +29,20 @@ public class ChartItemController {
     @GetMapping("/cart")
     public String showShoppingCart(Model model) {
         User user = userService.loggedInUser();
-        List<ChartItem> cartItems= chartService.listChartItems(user);
-        System.out.println(" I am : "+ user.getUserName());
-        System.out.println(" My first item is: "+ (cartItems.size()>0 ? cartItems.get(0).getProduct().getTitle():""));
-        model.addAttribute("cartItems", cartItems);
+        List<ChartItem> cartItems= cartService.listChartItems(user);
+        if(cartItems.size()==0) {
+            model.addAttribute("emptyCart", "Your cart is empty.");
+        } else {
+            model.addAttribute("cartItems", cartItems);
+        }
         return "shoppingcart";
     }
     @PostMapping("/cart/addproduct/{id}")
     public String addProductToCart(@PathVariable("id") Long id, Model model) {
         User user = userService.loggedInUser();
         Product product = productService.findProductById(id);
-        chartService.addCartItem(product, 1, user);
-        List<ChartItem> cartItems= chartService.listChartItems(user);
-        System.out.println(" I am : "+ user.getUserName());
-        System.out.println(" My first item is: "+ cartItems.get(0).getProduct().getTitle());
+        cartService.addCartItem(product, 1, user);
+        List<ChartItem> cartItems= cartService.listChartItems(user);
         model.addAttribute("cartItems", cartItems);
         return "shoppingcart";
     }
@@ -51,23 +51,9 @@ public class ChartItemController {
     public String deleteProductFromCart(@PathVariable("id") Long id, Model model) {
         User user = userService.loggedInUser();
         Product product = productService.findProductById(id);
-        //chartService.deleteCartItem(product, 1, user);
-        List<ChartItem> cartItems= chartService.listChartItems(user);
-        System.out.println(" I am : "+ user.getUserName());
-        System.out.println(" My first item is: "+ cartItems.get(0).getProduct().getTitle());
+        cartService.deleteCartItem(product, user);
+        List<ChartItem> cartItems= cartService.listChartItems(user);
         model.addAttribute("cartItems", cartItems);
         return "shoppingcart";
     }
-
-  /*  @PostMapping("/cart/addproduct/{id}")
-    public String addProductToCart(@PathVariable("id") Long id, Model model) {
-        User user = userService.loggedInUser();
-        Product product = productService.findProductById(id);
-        cartService.addCartItem(product, 1, user);
-       *//* List<ChartItem> cartItems= chartService.listChartItems(user);
-        System.out.println(" I am : "+ user.getUserName());
-        System.out.println(" My first item is: "+ cartItems.get(0).getProduct().getTitle());
-        model.addAttribute("cartItems", cartItems);*//*
-        return "home";
-    }*/
 }

@@ -9,6 +9,7 @@ import com.project.backend.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -35,14 +36,19 @@ public class ChartItemServiceImpl implements ChartItemService {
     public Integer addCartItem(Product product, int quantity, User user) {
         ChartItem cartItem = cartRepo.findByUserAndProduct(user, product);
         if(cartItem!=null) {
-            cartItem.setQuantity(quantity);
+            cartItem.setQuantity(cartItem.getQuantity()+1);
         } else {
             cartItem = new ChartItem();
             cartItem.setProduct(product);
             cartItem.setUser(user);
-            cartItem.setQuantity(quantity);
+            cartItem.setQuantity(1);
         }
         Integer currentQnt = cartRepo.save(cartItem).getQuantity();
         return currentQnt;
+    }
+
+    @Transactional
+    public void deleteCartItem(Product product, User user) {
+        cartRepo.deleteByUserAndProduct(user, product);
     }
 }
