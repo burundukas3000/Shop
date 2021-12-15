@@ -27,35 +27,27 @@
                     }
                 });
             });
-
-
         });
-
     </script>
     <script>
         function validateForm() {
             valid = true;
-
             if (document.contactForm.username.value == "" ) {
                 alert("User Name must be filled out");
                 valid = false;
             }
-
             if (document.contactForm.firstName.value == "" ) {
                 alert("Name must be filled out");
                 valid = false;
             }
-
             else if (document.contactForm.lastName.value == "" ) {
                 alert("Last Name must be filled out");
                 valid = false;
             }
-
             else if (document.contactForm.email.value == "" ) {
                 alert("email must be filled out");
                 valid = false;
             }
-
             else if (document.contactForm.password.value == "" ) {
                 alert("Password must be filled out");
                 valid = false;
@@ -97,13 +89,11 @@
                                 <!--First name/ Last name-->
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
-                                        </c:if><span class="error" id="errmsg"></span>
                                         <form:input path="firstName" class="form-control form-control-lg" id="firstName"/>
                                         <label class="form-label" for="firstName">First Name *</label>
                                         <form:errors path="firstName" cssClass="error" />
                                     </div>
                                     <div class="col-md-6 mb-4">
-                                        </c:if><span class="error" id="errmsg"></span>
                                         <form:input path="lastName" class="form-control form-control-lg" id="lastName"/>
                                         <label class="form-label" for="lastName">Last Name *</label>
                                         <form:errors path="lastName" cssClass="error" />
@@ -113,7 +103,6 @@
 
                                 <!--Email-->
                                 <div class="form-outline mb-4">
-                                    </c:if><span class="error" id="errmsg"></span>
                                     <form:input path="email" class="form-control form-control-lg" id="email"/>
                                     <label class="form-label" for="email">Email address *</label>
                                     <form:errors path="email" cssClass="error" />
@@ -121,7 +110,6 @@
 
                                 <!--Password-->
                                 <div class="form-outline mb-4">
-                                    </c:if><span class="error" id="errmsg"></span>
                                     <form:input path="password" class="form-control form-control-lg" id="password"/>
                                     <label class="form-label" for="email">Password *</label>
                                     <form:errors path="password" cssClass="error" />
@@ -147,4 +135,3 @@
 </section>
 
 <%@ include file="footer.jsp"%>
-

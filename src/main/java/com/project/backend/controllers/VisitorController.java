@@ -124,14 +124,11 @@ public class VisitorController {
         if (br.hasErrors()) {
             return "registration";
         }
-
-        else {
-            boolean saved = userService.saveUser(user);
-            logger.info("Successfully created user: " + user.getUsername() + " " + saved);
-            model.addAttribute("userName", user.getUsername());
-            model.addAttribute("userin", userService.isLoggedIn());
-            return "home";
-        }
+        boolean saved = userService.saveUser(user);
+        logger.info("Successfully created user: " + user.getUsername() + " " + saved);
+        model.addAttribute("userName", user.getUsername());
+        model.addAttribute("userin", userService.isLoggedIn());
+        return "home";
     }
 
 

@@ -1,121 +1,70 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<title>KukuDuku | Log In</title>
+<%@ include file="header.jsp"%>
 
-<!doctype html>
-<html lang="en">
+<section class="vh-100" style="background-color: #666666;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="../images/login1.png"
+                                 alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
+                        </div>
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
 
-<head>
+                                <form:form action="${pageContext.request.contextPath}/authUser"
+                                           method="POST" class="form-horizontal">
 
-    <title>Login Page</title>
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                                    <c:if test="${param.error != null}">
 
-    <!-- Reference Bootstrap files -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                                        <div class="alert alert-danger col-xs-offset-1 col-xs-10">
+                                            Invalid username and password.</div>
 
-    <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+                                    </c:if>
+                                    <c:if test="${param.logout != null}">
 
-    <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                                        <div class="alert alert-success col-xs-offset-1 col-xs-10">
+                                            Invalid username and password.</div>
 
-</head>
+                                    </c:if>
 
-<body>
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Login</h5>
 
-<div>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="username" class="form-control form-control-lg" />
+                                        <label class="form-label" for="username" name="username">Username</label>
+                                    </div>
 
-    <div id="loginbox" style="margin-top: 50px;"
-         class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="password" class="form-control form-control-lg" />
+                                        <label class="form-label" for="password" name="password" >Password</label>
+                                    </div>
 
-        <div class="panel panel-info">
-            <p><b>Register or log in as:</b></p>
-            <p><b>Customer:</b></p>
-            <p>username: customer</p>
-            <p><b>Manager:</b></p>
-            <p>username: manager</p>
-            <p><b>Loyal customer:</b></p>
-            <p>username: lycustomer</p>
-            <p><b>Password for all users:</b></p>
-            <p>the same as username</p>
-            <div class="panel-heading">
-                <div class="panel-title">Sign In</div>
-            </div>
+                                    <div class="pt-1 mb-4">
+                                        <button class="btn btn-dark btn-lg btn-block" type="submit" value="login">Login</button>
+                                    </div>
 
-            <div style="padding-top: 30px" class="panel-body">
-
-                <!-- Login Form -->
-                <form:form action="${pageContext.request.contextPath}/authUser"
-                           method="POST" class="form-horizontal">
-
-                    <!-- Place for messages: error, alert etc ... -->
-                    <div class="form-group">
-                        <div class="col-xs-15">
-                            <div>
-
-                                <!-- Check for login error -->
-
-                                <c:if test="${param.error != null}">
-
-                                    <div class="alert alert-danger col-xs-offset-1 col-xs-10">
-                                        Invalid username and password.</div>
-
-                                </c:if>
-                                <c:if test="${param.logout != null}">
-
-                                    <div class="alert alert-success col-xs-offset-1 col-xs-10">
-                                        Invalid username and password.</div>
-
-                                </c:if>
-                                <!--
-                                <div class="alert alert-success col-xs-offset-1 col-xs-10">
-                                    You have been logged out.
-                                </div>
-                                -->
+                                    <!--<a class="small text-muted" href="#!">Forgot password?</a>-->
+                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="../registration" style="color: #393f81;">Register here</a>
+                                    <br><a class="small text-muted">Account is not neccessary in order to shop</a>
+                                    </p>
+                                </form:form>
 
                             </div>
                         </div>
                     </div>
-
-                    <!-- User name -->
-                    <div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i
-                                    class="glyphicon glyphicon-user"></i></span> <input type="text"
-                                                                                        name="username" placeholder="username" class="form-control">
-                    </div>
-
-                    <!-- Password -->
-                    <div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i
-                                    class="glyphicon glyphicon-lock"></i></span> <input type="password"
-                                                                                        name="password" placeholder="password" class="form-control">
-                    </div>
-
-                    <!-- Login/Submit Button -->
-                    <div style="margin-top: 10px" class="form-group">
-                        <div class="col-sm-6 controls">
-                            <button type="submit" class="btn btn-success">Login</button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <a
-                                href="${pageContext.request.contextPath}/registration"
-                                class="btn btn-primary" role="button" aria-pressed="true">
-                            Register </a>
-                    </div>
-
-                </form:form>
-
+                </div>
             </div>
-
         </div>
-
     </div>
+</section>
 
-</div>
+<%@ include file="footer.jsp"%>
 
-</body>
-</html>
+
+
+

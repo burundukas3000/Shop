@@ -24,7 +24,7 @@
             <li class="nav-item"><a class="nav-link" href="contact">Contacts</a></li>
             <li class="nav-item"><a class="nav-link" href="about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="cart">Cart</a></li>
-            <li class="nav-item"><a class="nav-link" href="loginopt"><i class="glyphicon glyphicon-log-in"></i>Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="login"><i class="glyphicon glyphicon-log-in"></i>Login</a></li>
         </ul>
 
     </div>
