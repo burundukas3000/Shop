@@ -2,15 +2,44 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isELIgnored = "false" %>
 
-<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .error { color: red }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Cart</title>
+    <script>
+        $(document).ready(function() {
+            $("#quantity").change(function() {
+                $.ajax({
+                    url : '${pageContext.request.contextPath}/checkavailability/',
+                    data : {
+                        q : $("#quantity").val(),
+                        id : $("#productId").val()
+                    },
+                    success : function(responseText) {
+                        $("#errmsg").text(responseText);
+                        if (responseText != "") {
+                            $("#quantity").focus();
+                        }else {
+                            let qnt = $("#quantity").val();
+                            console.log('qnt' + qnt);
+                            let fin = $("#final").val();
+                            console.log('fin'+ fin);
+                            console.log('fin'+ (parseFloat(qnt)*parseFloat(fin)));
+                            let ptot = (parseFloat(qnt)*parseFloat(fin)).toFixed(2);
+                            $("#ptotal").text(ptot);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </head>
-<%@ include file="header.jsp"%>
 <div align="center">
+    <%@ include file="header.jsp"%>
     </br>
     <h2>Shopping Cart</h2></br>
     <c:if test="${cartItems.size()==0}">
@@ -35,17 +64,20 @@
                         <a href="${pageContext.request.contextPath}/product/${item.product.id}" target="_blank">
                         <c:out value="${item.product.title}" />
                     <td>
-                        <p>Quantity: <input type="number" value="${item.quantity}" id="'qnt'+${item.product.id}" class="form-control"/></p>
+                        <span class="error" id="errmsg"></span>
+                        <p>Quantity: <input type="number" value="${item.quantity}" id="quantity" class="form-control"/></p>
+                        <input type="number" id="productId" value="${item.product.id}" hidden="true"></input>
 
                         <c:set var="finalPrice" value="${item.product.loyalPrice>0 ? item.product.loyalPrice : item.product.happyPrice>0? item.product.happyPrice : item.product.price}"/>
                         <c:set var="totalPrice" value="${totalPrice+(finalPrice*item.quantity)}" />
                         <p>Price: <c:out value="${finalPrice}" /></p>
+                    <input type="number" id="final" value="${finalPrice}" hidden="true"></input>
                     </td>
                     <td>
                         <img src="${pageContext.request.contextPath}/image/${item.product.images[0].id}" height="150"><br>
                     </td>
                     <td>
-                        <p><c:out value="${item.quantity*finalPrice}" /></p>
+                        <p id="ptotal">${item.quantity*finalPrice}</p>
                     </td>
                 </tr>
             </c:forEach>

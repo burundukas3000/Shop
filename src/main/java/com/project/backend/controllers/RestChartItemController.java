@@ -4,11 +4,11 @@ import com.project.backend.services.ChartItemService;
 import com.project.backend.services.ProductService;
 import com.project.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class RestChartItemController {
 
     @Autowired
@@ -27,4 +27,19 @@ public class RestChartItemController {
             return "You must log in to use a shopping cart";
         }
     }
+
+    @GetMapping("/checkavailability")
+    public @ResponseBody
+    String checkAvailability(@RequestParam("q") int qnt, @RequestParam("id") Long id) {
+        String mssg= null;
+        int available = productService.findProductById(id).getAmount();
+        if(available>=qnt) {
+            mssg="";
+        }
+        else {
+            mssg="Available only: "+available+" items";
+        }
+        return mssg;
+    }
+
 }

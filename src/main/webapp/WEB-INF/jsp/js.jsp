@@ -1,4 +1,4 @@
-<html>
+
 <head>
     <script type="text/javascript">
         function updateQnt(clickedId) {
@@ -31,26 +31,6 @@
             }
         }
     </script>
-    <script>
-        $(document).ready(function() {
-            $("#quantity").change(function() {
-                $.ajax({
-                    url : 'checkavailability',
-                    data : {
-                        quantity : $("#quantity").val(),
-                        productid : $("#productid").val(),
-                    },
-                    success : function(responseText) {
-                        $("#errmsg").text(responseText);
-                        if (responseText != "") {
-                            $("#username").focus();
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-
     <title>JavaScript methods for Shopping Cart</title>
 </head>
 <body></body>
