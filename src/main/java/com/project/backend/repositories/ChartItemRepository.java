@@ -14,4 +14,9 @@ public interface ChartItemRepository extends JpaRepository<ChartItem, Long> {
     List<ChartItem> findByUser(User user);
 
     ChartItem findByUserAndProduct(User user, Product product);
+
+    void deleteByUserAndProduct(User user, Product product);
+
+
+
 }

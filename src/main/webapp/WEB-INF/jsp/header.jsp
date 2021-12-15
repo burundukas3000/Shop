@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="js.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,6 +13,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="/images/Icon.png" >
 </head>
+<sec:authorize access="hasAnyRole('ADMIN', 'CUSTOMER','LYCUSTOMER')" var="isAuthenticated"/>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="">KukuDuku</a>
@@ -24,12 +27,16 @@
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/products/category/clothes">Clothes</a></li>
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/products/category/toys">Toys</a></li>
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/products/category/accessories">Accessories</a></li>
-            <li class="nav-item"><a class="nav-link" href="registration">Registration</a></li>
+            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/registration">Registration</a></li>
             <li class="nav-item"><a class="nav-link" href="contact">Contacts</a></li>
             <li class="nav-item"><a class="nav-link" href="about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/cart">Cart</a></li>
-            <li class="nav-item"><a class="nav-link" href="loginopt"><i class="glyphicon glyphicon-log-in"></i>Login</a></li>
-        </ul>
+            <c:if test="${isAuthenticated}">
+                <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/logout"><i class="glyphicon glyphicon-log-in"></i>Logout</a></li>
+            </c:if>
+            <c:if test="${!isAuthenticated}">
+                <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/login"><i class="glyphicon glyphicon-log-in"></i>Login</a></li>
+            </c:if>        </ul>
 
     </div>
 </nav>

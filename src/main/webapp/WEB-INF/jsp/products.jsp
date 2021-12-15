@@ -71,7 +71,7 @@
                             </sec:authorize>
                             <sec:authorize access="!hasRole('ADMIN')">
                                 <td>
-                                    <form:form action="${pageContext.request.contextPath}/product/addtochart/${product.id}" method="POST">
+                                    <form:form action="${pageContext.request.contextPath}/cart/addproduct/${product.id}" method="POST">
                                         <input type="submit" value="add to chart"/>
                                     </form:form>
                                 </td>

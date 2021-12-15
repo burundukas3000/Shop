@@ -2,6 +2,7 @@ package com.project.backend.controllers;
 
 import com.project.backend.models.*;
 import com.project.backend.repositories.ImageRepository;
+import com.project.backend.services.ChartItemService;
 import com.project.backend.services.DiscountService;
 import com.project.backend.services.ProductService;
 import com.project.backend.services.UserService;
@@ -29,6 +30,8 @@ public class ManagerController {
     UserService userService;
     @Autowired
     DiscountService discountService;
+    @Autowired
+    ChartItemService cartService;
 
     @GetMapping("/manager/customers")
     public String allCustomers(Model model) {
@@ -95,5 +98,18 @@ public class ManagerController {
 
         return "products";
     }
+
+
+/*    @PostMapping("/cart/addproduct/{id}")
+    public String addProductToCart(@PathVariable("id") Long id, Model model) {
+        User user = userService.loggedInUser();
+        Product product = productService.findProductById(id);
+       cartService.addCartItem(product, 1, user);
+       *//* List<ChartItem> cartItems= chartService.listChartItems(user);
+        System.out.println(" I am : "+ user.getUserName());
+        System.out.println(" My first item is: "+ cartItems.get(0).getProduct().getTitle());
+        model.addAttribute("cartItems", cartItems);*//*
+        return "home";
+    }*/
 
 }
