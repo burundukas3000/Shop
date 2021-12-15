@@ -18,4 +18,6 @@ public interface ProductService {
     List<Product> getTopSoldProductsByCategory(String category);
 
     List<Product> getByPriceAscByCategory(String category);
+
+    void calculateDiscounts(Product product);
 }

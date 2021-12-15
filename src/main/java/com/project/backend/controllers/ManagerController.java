@@ -2,11 +2,9 @@ package com.project.backend.controllers;
 
 import com.project.backend.models.*;
 import com.project.backend.repositories.ImageRepository;
-import com.project.backend.repositories.ProductRepository;
 import com.project.backend.services.DiscountService;
 import com.project.backend.services.ProductService;
 import com.project.backend.services.UserService;
-import com.project.backend.services.UserServiceImpl;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,9 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.sql.Blob;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Controller

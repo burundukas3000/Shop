@@ -41,7 +41,7 @@ public class ProductServiceImpl implements ProductService {
         return product;
     }
 
-    protected void calculateDiscounts(Product product) {
+    public void calculateDiscounts(Product product) {
         if(product.getDiscount()!=null) {
             int first = product.getDiscount().getPercentage();
             System.out.println("price before " +product.getPrice());

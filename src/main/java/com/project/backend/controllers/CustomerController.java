@@ -6,7 +6,6 @@ import com.project.backend.repositories.ImageRepository;
 import com.project.backend.repositories.ProductRepository;
 import com.project.backend.services.PurchaseService;
 import com.project.backend.services.UserService;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;

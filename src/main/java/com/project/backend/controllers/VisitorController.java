@@ -107,7 +107,8 @@ public class VisitorController {
             "products/image/{id}",
             "/product/removediscount/image/{id}",
             "/products/category/topsold/image/{id}",
-            "/products/category/bypriceasc/image/{id}"})
+            "/products/category/bypriceasc/image/{id}",
+    "/image/{id}"})
     public void getProductById(HttpServletResponse response, @PathVariable("id") Long id) throws Exception {
         response.setContentType("image/jpeg");
 

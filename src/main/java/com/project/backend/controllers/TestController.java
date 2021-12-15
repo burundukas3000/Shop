@@ -2,9 +2,7 @@ package com.project.backend.controllers;
 
 import com.project.backend.models.*;
 import com.project.backend.repositories.*;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -65,12 +63,12 @@ public class TestController {
         }
 
         // adding item for user in shopping chart
-        Product p = productRepo.findById(1l).get();
+        Product p = productRepo.findById(2l).get();
         User u = userRepo.findById(3l).get();
         ChartItem chartItem = new ChartItem();
         chartItem.setProduct(p);
         chartItem.setUser(u);
-        chartItem.setQuantity(5);
+        chartItem.setQuantity(1);
         ChartItem savedItem = chartRepo.save(chartItem);
         System.out.println("Saved item in Chart " + savedItem.toString());
 
