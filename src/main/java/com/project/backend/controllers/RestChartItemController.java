@@ -18,8 +18,9 @@ public class RestChartItemController {
     @Autowired
     ProductService productService;
 
-    @PostMapping("/cart/add/{id}/{qnt}")
-    public String addProductToShoppingCart(@PathVariable("id") Long id, @PathVariable("qnt") int quantity) {
+    @PostMapping("/cart/add")
+    public @ResponseBody
+    String addProductToShoppingCart(@RequestParam("id") Long id, @RequestParam("qnt") int quantity) {
         if(userService.loggedInUser()!=null && !userService.loggedInUser().getUserName().equals("anonymousUser")) {
             Integer currentQuantity = cartService.addCartItem(productService.findProductById(id), quantity, userService.loggedInUser());
             return "The product quantity is: "+currentQuantity;
