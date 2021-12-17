@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav navbar-nav navbar-left">
             <li class="nav-item active"><a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="shop">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/shop">Shop</a></li>
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/products/category/clothes">Clothes</a></li>
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/products/category/toys">Toys</a></li>
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/products/category/accessories">Accessories</a></li>

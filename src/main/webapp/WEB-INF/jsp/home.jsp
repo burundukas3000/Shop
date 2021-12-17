@@ -7,10 +7,8 @@
     <title>KukuDuku | Home Page</title>
     <%@ include file="header.jsp"%>
 </head>
-<body>
 
 <c:if test="${userin}">Hello, ${userName}</c:if>
-<div class="main-background"></div>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -19,13 +17,13 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="../images/1.jpg" class="d-block w-100" alt="..." height="600">
+            <img src="../images/Cover1.png" class="d-block w-100" alt="..." height="600">
         </div>
         <div class="carousel-item">
-            <img src="../images/2.jpg" class="d-block w-100" alt="..." height="600">
+            <img src="../images/Cover2.png" class="d-block w-100" alt="..." height="600">
         </div>
         <div class="carousel-item">
-            <img src="../images/3.jpg" class="d-block w-100" alt="..." height="600">
+            <img src="../images/Cover3.png" class="d-block w-100" alt="..." height="600">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls"
@@ -38,7 +36,6 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-</body>
 
 <%@ include file="footer.jsp"%>
 </html>
