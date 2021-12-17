@@ -29,6 +29,8 @@
             <li class="nav-item"><a class="nav-link" href="about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/cart">Cart</a></li>
             <c:if test="${isAuthenticated}">
+                <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/customer/profile"><i class="glyphicon glyphicon-log-in"></i>Profile</a></li>
+
                 <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/logout"><i class="glyphicon glyphicon-log-in"></i>Logout</a></li>
             </c:if>
             <c:if test="${!isAuthenticated}">

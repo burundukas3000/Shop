@@ -1,5 +1,4 @@
 package com.project.backend.controllers;
-
 import com.project.backend.models.Purchase;
 import com.project.backend.models.User;
 import com.project.backend.repositories.ImageRepository;
@@ -11,6 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 // Controller for Logged In User
@@ -44,7 +44,7 @@ public class CustomerController {
     }
 
     @GetMapping("/customer/purchase/{id}")
-    public String viewOrder(@PathVariable("id") Long id, Model model) {
+    public String viewOrder(@PathVariable("id") Long id, Model model)  {
         Purchase purchase = purchaseService.getByPurchaseId(id);
         model.addAttribute("purchase", purchase);
         return "purchase";

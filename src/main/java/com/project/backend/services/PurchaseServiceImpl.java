@@ -11,7 +11,7 @@ public class PurchaseServiceImpl implements PurchaseService {
     @Autowired
     PurchaseRepository purchaseRepo;
 
-    public Purchase getByPurchaseId(Long id){
+    public Purchase getByPurchaseId(Long id) {
         Purchase purchase = purchaseRepo.getById(id);
         return purchase;
     }

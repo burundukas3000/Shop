@@ -34,7 +34,8 @@
                     <c:forEach var="product" items="${Products.products}" varStatus="loop">
                         <tr>
                             <td>
-                                <form:form action="${pageContext.request.contextPath}/product/${product.id}" method="GET">
+                                <form:form />
+                                <form:form method="GET" action="${pageContext.request.contextPath}/product/${product.id}">
                                     <input type="submit" value="${product.title}" />
                                 </form:form>
                             </td>
