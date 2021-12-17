@@ -17,7 +17,7 @@
             <img src="../images/Cover2.png" class="d-block w-100" alt="..." height="700">
         </div>
         <div class="carousel-item">
-            <img src="../images/3.jpg" class="d-block w-100" alt="..." height="700">
+            <img src="../images/Cover3.png" class="d-block w-100" alt="..." height="700">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls"

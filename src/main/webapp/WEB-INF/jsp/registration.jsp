@@ -65,7 +65,7 @@
                 <div class="card" style="border-radius: 1rem;">
                     <div class="row g-0">
                         <div class="col-md-6 col-lg-5 d-none d-md-block">
-                            <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/img1.jpg"
+                            <img src="../images/registration.jpg"
                                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
                         </div>
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -122,7 +122,7 @@
 
                                     <!--<a class="small text-muted" href="#!">Forgot password?</a>-->
                                     <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account?
-                                        <a href="loginopt" style="color: #393f81;"> Login here</a></p>
+                                        <a href="login" style="color: #393f81;"> Login here</a></p>
                                     </form:form>
 
                                 </div>

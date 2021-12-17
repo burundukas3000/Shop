@@ -20,13 +20,11 @@
 
                                     <div class="row mb-4 d-flex justify-content-between align-items-center">
                                         <div class="col-md-2 col-lg-2 col-xl-2">
-                                            <img
-                                                    src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-shopping-carts/img5.jpg"
-                                                    class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                            <img src="../images/christmashat2.jpg" class="img-fluid rounded-3" alt="1">
                                         </div>
                                         <div class="col-md-3 col-lg-3 col-xl-3">
-                                            <h6 class="text-muted">Shirt</h6>
-                                            <h6 class="text-black mb-0">Cotton T-shirt</h6>
+                                            <h6 class="text-muted">Clothes and accessories</h6>
+                                            <h6 class="text-black mb-0">Christmas hat</h6>
                                         </div>
                                         <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                                             <button class="btn btn-link px-2"
@@ -43,7 +41,7 @@
                                             </button>
                                         </div>
                                         <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                            <h6 class="mb-0">44.00 eur</h6>
+                                            <h6 class="mb-0">24.00 eur</h6>
                                         </div>
                                         <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                                             <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
@@ -54,13 +52,11 @@
 
                                     <div class="row mb-4 d-flex justify-content-between align-items-center">
                                         <div class="col-md-2 col-lg-2 col-xl-2">
-                                            <img
-                                                    src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-shopping-carts/img6.jpg"
-                                                    class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                            <img src="../images/blackset.jpg" class="img-fluid rounded-3" alt="2">
                                         </div>
                                         <div class="col-md-3 col-lg-3 col-xl-3">
-                                            <h6 class="text-muted">Shirt</h6>
-                                            <h6 class="text-black mb-0">Cotton T-shirt</h6>
+                                            <h6 class="text-muted">Clothes and accessories</h6>
+                                            <h6 class="text-black mb-0">Black set (hat & neckwarmer)</h6>
                                         </div>
                                         <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                                             <button class="btn btn-link px-2"
@@ -77,7 +73,7 @@
                                             </button>
                                         </div>
                                         <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                            <h6 class="mb-0">44.00 eur</h6>
+                                            <h6 class="mb-0">35.00 eur</h6>
                                         </div>
                                         <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                                             <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
@@ -88,13 +84,11 @@
 
                                     <div class="row mb-4 d-flex justify-content-between align-items-center">
                                         <div class="col-md-2 col-lg-2 col-xl-2">
-                                            <img
-                                                    src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-shopping-carts/img7.jpg"
-                                                    class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                            <img src="../images/mint.jpg" class="img-fluid rounded-3" alt="Cotton T-shirt">
                                         </div>
                                         <div class="col-md-3 col-lg-3 col-xl-3">
-                                            <h6 class="text-muted">Shirt</h6>
-                                            <h6 class="text-black mb-0">Cotton T-shirt</h6>
+                                            <h6 class="text-muted">Self care</h6>
+                                            <h6 class="text-black mb-0">Mint hydrolate</h6>
                                         </div>
                                         <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                                             <button class="btn btn-link px-2"
@@ -111,7 +105,7 @@
                                             </button>
                                         </div>
                                         <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                            <h6 class="mb-0">44.00 eur</h6>
+                                            <h6 class="mb-0">10.00 eur</h6>
                                         </div>
                                         <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                                             <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
@@ -121,7 +115,7 @@
                                     <hr class="my-4">
 
                                     <div class="pt-5">
-                                        <h6 class="mb-0"><a href="#!" class="text-body"><i
+                                        <h6 class="mb-0"><a href="shop" class="text-body"><i
                                                 class="fas fa-long-arrow-alt-left me-2"></i> <- Back to shop</a></h6>
                                     </div>
                                 </div>
@@ -133,17 +127,15 @@
 
                                     <div class="d-flex justify-content-between mb-4">
                                         <h5 class="text-uppercase">items 3</h5>
-                                        <h5>132.00 eur</h5>
+                                        <h5>69.00 eur</h5>
                                     </div>
 
                                     <h5 class="text-uppercase mb-3">Shipping</h5>
 
                                     <div class="mb-4 pb-2">
                                         <select class="select">
-                                            <option value="1">Standard-Delivery- 5.00 eur</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                            <option value="4">Four</option>
+                                            <option value="1">Delivery in Europe - 4.00eur</option>
+                                            <option value="2">Delivery outside of Europe - 6.00eur<option>
                                         </select>
                                     </div>
 
@@ -160,7 +152,7 @@
 
                                     <div class="d-flex justify-content-between mb-5">
                                         <h5 class="text-uppercase">Total price</h5>
-                                        <h5>137.00 eur</h5>
+                                        <h5>69.00 eur</h5>
                                     </div>
 
                                     <button type="button" class="btn btn-dark btn-block btn-lg"

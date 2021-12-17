@@ -64,6 +64,12 @@ public class VisitorController {
     @GetMapping("/cart")
     public String cart() {return "cart";}
 
+    @GetMapping("/iclothes")
+    public String iclothes() {return "iclothes";}
+
+    @GetMapping("/itoys")
+    public String itoys() {return "itoys";}
+
     @GetMapping("/iteam")
     public String iteam() {return "iteam";}
 
