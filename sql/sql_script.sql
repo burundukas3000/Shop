@@ -196,6 +196,25 @@ VALUES
     (5, 2, 1),
     (6, 1, 4);
 
+--
+-- Table structure for table chart_item
+--
+CREATE TABLE IF NOT EXISTS chart_item (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    product_id int(11) NOT NULL,
+    user_id int(11) NOT NULL,
+    quantity int(11) NULL,
+
+    PRIMARY KEY (id),
+
+    CONSTRAINT FK_PROD_07 FOREIGN KEY (product_id)
+    REFERENCES product (id)
+    ON DELETE NO ACTION ON UPDATE NO ACTION,
+
+    CONSTRAINT FK_USER_08 FOREIGN KEY (user_id)
+    REFERENCES user (id)
+    ON DELETE NO ACTION ON UPDATE NO ACTION
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Checking data

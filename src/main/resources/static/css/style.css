@@ -1,11 +1,68 @@
 
-h1{
-    color: orange;
+.home-content-wrapper{
+    background-image: url("../images/shop1.png");
+    background-size: cover;
+    height: 700px;
+}
+.main-background{
+    background-color: dimgrey;
+    background.size: cover;
+    height: auto;
 }
 
+
+
+
+.overlay-box{
+    padding: 300px 0px;
+    box-sizing: initial;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100x;
+}
+.little-overlay-box{
+    padding: 20px 0px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100x;
+}
+
+
+
+.main-text{
+    color: #FFFFFF;
+    font-size: 30px;
+    font-family: "Bookman Old Style";
+    line-height: 20px;
+}
 .welcome-text{
     color: #FFF;
     font-size: 75px;
     font-family: raleway-bold;
     line-height: 90px;
+}
+
+
+
+
+.conteiner{
+    width: 1200px;
+    margin: 0px auto;
+    position: absolute;
+}
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    padding: 10px;
+}
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 150px;
+    font-size: 30px;
+    text-align: center;
 }

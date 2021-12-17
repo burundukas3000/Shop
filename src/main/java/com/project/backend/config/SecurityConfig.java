@@ -1,6 +1,7 @@
 package com.project.backend.config;
 
 import com.project.backend.services.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
@@ -13,11 +14,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.client.RestTemplate;
 
 
 @EnableWebSecurity
-@PropertySource("classpath:application.properties")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    ShopAccessDeniedHandler shopAccessDeniedHandler;
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -33,12 +37,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return authProvider;
     }
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertyPlaceholderConfigurer() {
-
-        return new PropertySourcesPlaceholderConfigurer();
-    }
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
@@ -50,21 +48,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().httpStrictTransportSecurity().disable().and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/**").permitAll()
                 .antMatchers("/test").permitAll()
                 .antMatchers("/error").permitAll()
                 .antMatchers("/manager/**").hasAnyRole("MANAGER", "ADMIN")
-                .antMatchers("/customer/**").hasAnyRole("CUSTOMER", "ADMIN")
-                .anyRequest().authenticated()
+                .antMatchers("/customer/**").hasAnyRole("CUSTOMER", "LYCUSTOMER", "ADMIN")
                 .and()
-                .formLogin().and()
-                .httpBasic().and()
+                .exceptionHandling()
+                .accessDeniedHandler(shopAccessDeniedHandler)
+                .and()
+                .formLogin().loginPage("/login")
+                .loginProcessingUrl("/authUser").and()
                 .logout()
+                .logoutSuccessUrl("/home")
                 .permitAll();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    // Bean for REST client
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 
 }
