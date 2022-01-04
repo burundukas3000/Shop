@@ -1,4 +1,5 @@
 package com.project.backend.controllers;
+import com.project.backend.general.AddDateUtils;
 import com.project.backend.models.Purchase;
 import com.project.backend.models.User;
 import com.project.backend.repositories.ImageRepository;
@@ -30,6 +31,9 @@ public class CustomerController {
     public String profile(Model model) {
         String userName = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userService.getByUserName(userName);
+        for(Purchase p: user.getPurchases()){
+            p.feDateCreated = AddDateUtils.dateWithoutTime(p.getDateCreated());
+        }
         model.addAttribute("user", user);
         return "profile";
     }

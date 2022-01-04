@@ -33,13 +33,44 @@ public class ManagerController {
     @Autowired
     ChartItemService cartService;
 
+    // Gets a list of all customers
     @GetMapping("/manager/customers")
     public String allCustomers(Model model) {
         List<User> customers = userService.findAllUsers();
-        System.out.println(customers.get(0).toString());
         model.addAttribute("customers", customers);
         return "customers";
     }
+
+    // Sort customers by total money spent
+    @GetMapping("/manager/customers/top/amount")
+    public String customersTopSale(Model model) {
+        List<UserActivity> customers = userService.findAllUsersByMoneySpent();
+        model.addAttribute("customers", customers);
+        model.addAttribute("addInfo", true);
+        return "customers";
+    }
+    // Sort customers by purchase frequency
+    @GetMapping("/manager/customers/top/freq")
+    public String customersPurchaseFreq(Model model) {
+        List<UserActivity> customers = userService.findAllUsersByPurchaseFrequency();
+        model.addAttribute("customers", customers);
+        model.addAttribute("addInfo",true);
+        return "customers";
+    }
+
+/*    // Change customer status (from/to loyal customer)
+    @PostMapping(value = "/manager/customer/loyalty")
+    public String addDiscountToProducts(@ModelAttribute("User") User user, BindingResult br, Model model) throws Exception {
+        userService.changeCustomerLoyalty(user.getId(), user.getRole());
+        List<Product> updatedProducts = productService.findByCategory(products.get(0).getCategory().toString());
+
+        productList.setProducts(updatedProducts);
+        model.addAttribute("Products", productList);
+        List<Discount> discounts = discountService.getAllDiscounts();
+        model.addAttribute("listOfDiscounts", discounts);
+
+        return "customers";
+    }*/
 
     @GetMapping("/manager/createproduct")
     public String showUploadForm() {
@@ -71,7 +102,25 @@ public class ManagerController {
         IOUtils.copy(inputStream, response.getOutputStream());
     }
 
-    @PostMapping(value = "/products/adddiscount")
+
+
+
+
+    // Creates a product
+    @PostMapping("/manager/products/add")
+    public String createProduct(@PathVariable("id") Long id, Model model) {
+        return "home";
+    }
+
+    // Creates a discount
+    @PostMapping("/manager/discounts/add")
+    public String createDiscount(@PathVariable("id") Long id, Model model) {
+
+        return "home";
+    }
+
+    // Adds discount to particular products
+    @PostMapping(value = "/manager/products/adddiscount")
     public String addDiscountToProducts(@ModelAttribute("Products") ProductListContainer productList, BindingResult br, Model model) throws Exception {
         List<Product> products = productList.getProducts();
         productService.addDiscountToProducts(products);
@@ -85,7 +134,8 @@ public class ManagerController {
         return "products";
     }
 
-    @PostMapping(value = "/product/removediscount/{id}")
+    // Removes discount from a particular product
+    @PostMapping(value = "/manager/discounts/remove/{id}")
     public String removeDiscountFromProduct(@PathVariable("id") Long id, Model model){
         productService.removeDiscountFromProduct(id);
 
@@ -95,21 +145,7 @@ public class ManagerController {
         model.addAttribute("Products", productList);
         List<Discount> discounts = discountService.getAllDiscounts();
         model.addAttribute("listOfDiscounts", discounts);
-
         return "products";
     }
-
-
-/*    @PostMapping("/cart/addproduct/{id}")
-    public String addProductToCart(@PathVariable("id") Long id, Model model) {
-        User user = userService.loggedInUser();
-        Product product = productService.findProductById(id);
-       cartService.addCartItem(product, 1, user);
-       *//* List<ChartItem> cartItems= chartService.listChartItems(user);
-        System.out.println(" I am : "+ user.getUserName());
-        System.out.println(" My first item is: "+ cartItems.get(0).getProduct().getTitle());
-        model.addAttribute("cartItems", cartItems);*//*
-        return "home";
-    }*/
 
 }

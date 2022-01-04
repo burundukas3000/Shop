@@ -60,6 +60,9 @@
                         <form:form action="${pageContext.request.contextPath}/cart/deleteproduct/${item.product.id}" method="POST">
                             <input type="submit" value="delete"/>
                         </form:form>
+                            <form action="" method="post">
+                                <input type="submit" name="upvote" value="Upvote" />
+                            </form>
                     <td>
                         <a href="${pageContext.request.contextPath}/product/${item.product.id}" target="_blank">
                         <c:out value="${item.product.title}" />

@@ -16,9 +16,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     Optional<Product> findById(Long id);
 
-
-    // method works in SQL but doesn't in Hibernate because no @Entity mapping for joint table. How to get additional fields
-    // from joint table?
     @Query("FROM Product p \n" +
             "JOIN PurchasesProducts pp ON p.id=pp.product.id\n" +
             "            WHERE p.category=:category\n" +

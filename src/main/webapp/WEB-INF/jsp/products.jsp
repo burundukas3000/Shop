@@ -18,7 +18,7 @@
             <form:form action="${pageContext.request.contextPath}/products/category/bypriceasc/${Products.products[0].category}" method="GET">
                 <input type="submit" value="sort by price asc"/>
             </form:form>
-            <form:form method = "POST" modelAttribute="Products" action = "/products/adddiscount">
+            <form:form method = "POST" modelAttribute="Products" action = "${pageContext.request.contextPath}/manager/products/adddiscount">
                 <table border="1" cellpadding="5">
                     <tr>
                         <th>Title</th>
@@ -65,7 +65,7 @@
                                         </c:forEach>
                                     </form:select>
 
-                                    <form:form action="${pageContext.request.contextPath}/product/removediscount/${product.id}" method="POST">
+                                    <form:form action="${pageContext.request.contextPath}/manager/discounts/remove/${product.id}" method="POST">
                                         <input type="submit" value="delete discount"/>
                                     </form:form>
                                 </td>

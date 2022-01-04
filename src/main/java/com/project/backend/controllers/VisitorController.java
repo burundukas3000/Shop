@@ -54,8 +54,11 @@ public class VisitorController {
     @GetMapping("/shop")
     public String shop() {return "shop";}
 
-    @GetMapping("/login")
+    @GetMapping(value="/login")
     public String login() {return "login";}
+
+    @GetMapping("/logout")
+    public String logout() {return "home";}
 
     @GetMapping("/about")
     public String about() {return "about";}

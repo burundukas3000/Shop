@@ -1,32 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP List Users Records</title>
+    <link rel="stylesheet" href="/css/rest.css">
+    <title>Products</title>
 </head>
+<%@ include file="header.jsp"%>
 <body>
+    <div align="center">
+        <h2>Customers</h2>
+        <form:form action="${pageContext.request.contextPath}/manager/customers/top/amount" method="GET">
+            <input type="submit" value="sort by money spent"/>
+        </form:form>
+        <form:form action="${pageContext.request.contextPath}/manager/customers/top/freq" method="GET">
+            <input type="submit" value="sort by purchase frequency"/>
+        </form:form>
 
-<div align="center">
-    <table border="1" cellpadding="5">
-        <caption><h2>List of users</h2></caption>
-        <tr>
-            <th>ID</th>
-            <th>UserName</th>
-            <th>Email</th>
-        </tr>
-        <c:forEach var="customer" items="${customers}">
+        <table border="1" cellpadding="5">
             <tr>
-                <td><c:out value="${customer.id}" /></td>
-                <td><c:out value="${customer.userName}" /></td>
-                <td><c:out value="${customer.email}" /></td>
+                <th>UserName</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>E-mail</th>
+                <c:if test="${addInfo}">
+                    <th>Money spent</th>
+                    <th>Purchases made</th>
+                </c:if>
+                <th>Loyalty</th>
             </tr>
-        </c:forEach>
-    </table>
-</div>
+            <c:forEach var="c" items="${customers}" varStatus="loop">
+                <tr>
+                    <td>${c.userName}</td>
+                    <td>${c.firstName}</td>
+                    <td>${c.lastName}</td>
+                    <td>${c.email}</td>
+                    <c:if test="${addInfo}">
+                        <td>${c.moneySpent}</td>
+                        <td>${c.freq}</td>
+                    </c:if>
+                    <td>${c.role}</td>
+            </c:forEach>
+        </table>
+    </div>
 </body>
 </html>

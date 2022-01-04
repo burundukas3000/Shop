@@ -1,0 +1,769 @@
+22-01-04 Tue 12:02:02.908 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 12:02:03.075 [http-nio-8080-exec-1] [1;31mERROR[0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet][0;39m - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception 
+java.lang.NullPointerException: null
+	at com.project.backend.config.ShopAccessDeniedHandler.handle(ShopAccessDeniedHandler.java:27)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:129)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+22-01-04 Tue 12:02:52.768 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 12:02:52.768 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 12:02:52.981 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 12:03:03.044 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 12:03:03.840 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 12:03:03.841 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 12:03:03.853 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 12:03:05.950 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 12:03:05.951 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 12:03:05.953 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 12:28:15.627 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 12:28:15.627 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 12:28:15.837 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 12:28:26.371 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 12:28:26.961 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 12:28:26.962 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 12:28:26.973 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 12:28:32.231 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 12:28:32.232 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 12:28:32.232 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 12:31:31.097 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 12:31:31.097 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 12:31:31.098 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 12:31:35.037 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 12:31:35.038 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 12:31:35.039 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 12:36:23.898 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 12:36:23.898 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 12:36:24.121 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 12:36:32.742 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 12:36:33.370 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 12:36:33.370 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 12:36:33.380 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 12:36:38.145 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 12:36:38.146 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 12:36:38.147 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 12:39:52.436 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 12:39:52.438 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 12:39:52.653 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 12:40:15.161 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 12:40:16.410 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 12:40:16.410 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 12:40:16.427 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:03:20.449 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:03:20.449 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:03:20.723 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:03:44.219 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:03:45.618 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:03:45.618 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:03:45.645 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:03:51.437 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:03:51.441 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:03:51.441 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:04:31.139 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:04:31.139 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:04:31.382 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:04:43.207 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:04:43.426 [http-nio-8080-exec-1] [1;31mERROR[0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet][0;39m - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception 
+java.lang.NullPointerException: null
+	at com.project.backend.config.ShopAccessDeniedHandler.handle(ShopAccessDeniedHandler.java:27)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:129)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+22-01-04 Tue 14:04:49.386 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:04:49.391 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:04:49.409 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:04:53.733 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:04:53.739 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:04:53.740 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:06:10.050 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:06:10.050 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:06:10.316 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:06:19.057 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:06:19.250 [http-nio-8080-exec-1] [1;31mERROR[0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet][0;39m - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception 
+java.lang.NullPointerException: null
+	at com.project.backend.config.ShopAccessDeniedHandler.handle(ShopAccessDeniedHandler.java:27)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:129)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+22-01-04 Tue 14:06:24.801 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:06:24.801 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:06:24.830 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:06:28.301 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:06:28.309 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:06:28.309 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:08:35.438 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:08:35.446 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:08:35.721 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:08:38.549 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:09:04.700 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:09:04.700 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:09:04.721 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:09:07.226 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:09:07.232 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:09:07.233 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:09:16.285 [http-nio-8080-exec-8] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:09:16.285 [http-nio-8080-exec-8] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:09:16.288 [http-nio-8080-exec-8] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:09:19.823 [http-nio-8080-exec-10] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:09:19.829 [http-nio-8080-exec-10] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:09:19.830 [http-nio-8080-exec-10] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:17:21.166 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:17:21.166 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:17:21.399 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:17:31.425 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:17:32.909 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:17:32.917 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:17:32.940 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:17:34.717 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:17:34.718 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:17:34.719 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:17:42.818 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:17:42.818 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:17:42.818 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:18:33.106 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:18:33.107 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:18:33.108 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:18:36.331 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:18:36.339 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:18:36.340 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:18:37.629 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:18:37.633 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:18:37.634 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:18:39.198 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:18:39.199 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:18:39.199 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:19:41.616 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:19:41.625 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:19:41.625 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:23:36.150 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:23:36.150 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:23:36.437 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:23:43.687 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:23:44.637 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:23:44.637 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:23:44.654 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:23:48.362 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:23:48.372 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:23:48.372 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:24:38.134 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:24:38.134 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:24:38.409 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:24:50.853 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:24:57.928 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:24:57.936 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:24:57.952 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:25:01.360 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:25:01.362 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:25:01.362 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:25:10.387 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:25:10.387 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:25:10.387 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:25:17.599 [http-nio-8080-exec-8] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:25:17.606 [http-nio-8080-exec-8] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:25:17.606 [http-nio-8080-exec-8] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:28:20.840 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:28:20.840 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:28:21.094 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:28:37.366 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:28:38.835 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:28:38.842 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:28:38.868 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:28:40.825 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:28:40.828 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:28:40.828 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:31:13.065 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:31:13.065 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:31:13.449 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:31:21.538 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:31:22.442 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:31:22.450 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:31:22.468 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:31:24.463 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:31:24.466 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:31:24.466 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:31:36.151 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:31:36.151 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:31:36.151 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:31:42.635 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:31:42.635 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:31:42.642 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:32:46.666 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:32:46.666 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:32:46.892 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:32:53.983 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:32:54.892 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:32:54.892 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:32:54.909 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:32:59.234 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:32:59.243 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:32:59.243 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:33:00.660 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:33:00.660 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:33:00.660 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:33:01.935 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:33:01.943 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:33:01.944 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:33:07.402 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:33:07.402 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:33:07.402 [http-nio-8080-exec-9] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:33:09.594 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:33:09.594 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:33:09.594 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:33:13.778 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:33:13.783 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:33:13.783 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:33:16.495 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:33:16.495 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:33:16.498 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:34:40.870 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:34:40.870 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:34:41.103 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:34:49.587 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:34:50.478 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:34:50.479 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:34:50.500 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:34:52.125 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:34:52.128 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:34:52.128 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:36:28.664 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:36:28.664 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:36:28.972 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:36:35.905 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:36:36.847 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:36:36.847 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:36:36.866 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:36:38.918 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:36:38.927 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:36:38.927 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:37:45.278 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:37:45.278 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:37:45.278 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:38:16.982 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:38:16.982 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:38:17.248 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:38:25.792 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:38:31.743 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:38:31.743 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:38:31.768 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:38:34.701 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:38:34.706 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:38:34.706 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:40:02.001 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:40:02.001 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:40:02.243 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:40:10.919 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:40:11.893 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:40:11.893 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:40:11.908 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:40:13.453 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:40:13.455 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:40:13.455 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:42:14.823 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:42:14.823 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:42:15.065 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:42:22.608 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:42:23.451 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:42:23.451 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:42:23.469 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:42:25.277 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:42:25.277 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:42:25.277 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:43:42.740 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:43:42.740 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:43:43.006 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:43:56.165 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:43:57.114 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:43:57.121 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:43:57.136 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:43:59.068 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:43:59.072 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:43:59.072 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:44:48.963 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:44:48.963 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:44:49.292 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:44:55.522 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:45:00.823 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:45:00.830 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:45:00.852 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:49:08.547 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:49:08.547 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:49:08.797 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:49:19.165 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:49:20.538 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:49:20.538 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:49:20.563 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:52:21.954 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:52:21.954 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:52:22.200 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:52:33.893 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:52:35.285 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:52:35.285 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:52:35.310 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 14:53:32.824 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:53:32.824 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:53:33.124 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:53:34.399 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Stopping service [Tomcat] 
+22-01-04 Tue 14:58:47.172 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 14:58:47.172 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 14:58:47.455 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 14:59:00.515 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 14:59:01.973 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 14:59:01.974 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 14:59:01.986 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:06:49.286 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:06:49.286 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:06:49.553 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:06:59.221 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:07:00.683 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:07:00.683 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:07:00.708 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:08:46.998 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:08:46.998 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:08:47.240 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:09:16.226 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:09:16.226 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:09:16.510 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:09:23.737 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:09:24.643 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:09:24.650 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:09:24.660 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:11:09.261 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:11:09.261 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:11:09.261 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:12:51.089 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:12:51.089 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:12:51.348 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:13:04.075 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:13:04.966 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:13:04.974 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:13:04.983 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:14:01.179 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:14:01.179 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:14:01.446 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:14:08.522 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:14:09.447 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:14:09.456 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:14:09.469 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:14:41.898 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:14:41.898 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:14:41.898 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:18:35.140 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:18:35.140 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:18:35.390 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:22:47.481 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:22:52.500 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:22:52.500 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:22:52.516 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:24:28.884 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:24:28.884 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:24:29.159 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:24:40.823 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:24:42.065 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:24:42.065 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:24:42.087 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:24:49.729 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:24:49.730 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:24:49.730 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:25:18.298 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:25:18.303 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:25:18.304 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:27:27.743 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:27:27.751 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:27:27.985 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:27:37.411 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:27:38.286 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:27:38.290 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:27:38.305 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:32:59.059 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:32:59.059 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:32:59.301 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:33:23.274 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:33:24.704 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:33:24.709 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:33:24.740 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:33:30.756 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:33:30.760 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:33:30.760 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:38:59.521 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:38:59.521 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:38:59.771 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:39:10.149 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:39:11.572 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:39:11.572 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:39:11.591 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:41:35.120 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:41:35.120 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:41:35.386 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:41:44.636 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:41:45.649 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:41:45.654 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:41:45.674 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:43:40.659 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:43:40.659 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:43:40.923 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:43:51.126 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:43:52.066 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:43:52.066 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:43:52.084 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:44:28.188 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:44:28.196 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:44:28.429 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:44:34.012 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:44:34.071 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:44:34.071 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:44:34.087 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:46:07.771 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:46:07.771 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:46:08.013 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:46:15.706 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:46:16.671 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:46:16.675 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:46:16.690 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:47:37.949 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:47:37.949 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:47:38.197 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:47:47.678 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:47:48.533 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:47:48.533 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:47:48.549 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:48:00.211 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:48:00.215 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:48:00.215 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:48:09.883 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:48:09.883 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:48:09.888 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:50:21.572 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:50:21.572 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:50:21.830 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:50:42.715 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:50:43.582 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:50:43.587 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:50:43.600 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:50:56.900 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:50:56.905 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:50:56.906 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:52:58.490 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:52:58.490 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:52:58.779 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 15:53:08.071 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 15:53:08.151 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 15:53:08.151 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 15:53:08.159 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 15:59:53.704 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 15:59:53.704 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 15:59:53.980 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 16:00:03.097 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 16:00:03.956 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:00:03.956 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:00:03.970 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:13:44.636 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 16:13:44.636 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 16:13:44.879 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 16:13:57.528 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 16:14:03.973 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:14:03.981 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:14:03.997 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:14:08.775 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:14:08.780 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:14:08.781 [http-nio-8080-exec-4] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:15:12.291 [http-nio-8080-exec-10] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:15:12.295 [http-nio-8080-exec-10] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:15:12.296 [http-nio-8080-exec-10] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:18:34.558 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 16:18:34.558 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 16:18:34.832 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 16:18:43.517 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 16:18:44.376 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:18:44.376 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:18:44.392 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:29:45.366 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 16:29:45.366 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 16:29:45.608 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 16:29:58.291 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 16:29:59.184 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:29:59.192 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:29:59.209 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:30:49.681 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 16:30:49.681 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 16:30:49.939 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 16:30:52.694 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 16:30:53.549 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:30:53.553 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:30:53.563 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:32:45.143 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:32:45.147 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:32:45.147 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:38:48.437 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 16:38:48.437 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 16:38:48.678 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 16:38:57.346 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 16:38:58.279 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:38:58.279 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:38:58.297 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:38:59.970 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:38:59.972 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:38:59.973 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:39:09.781 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:39:09.782 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:39:09.782 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:41:36.789 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:41:36.789 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:41:36.789 [http-nio-8080-exec-6] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:41:48.938 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 16:41:48.938 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 16:41:49.221 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 16:42:08.615 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 16:42:09.508 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:42:09.508 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:42:09.533 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:43:44.699 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 16:43:44.699 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 16:43:44.950 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 16:43:55.857 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 16:43:57.301 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:43:57.307 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:43:57.327 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:44:04.494 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:44:04.499 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:44:04.501 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:51:31.204 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 16:51:31.204 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 16:51:31.505 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 16:51:44.523 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 16:51:45.590 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:51:45.590 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:51:45.613 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:55:28.563 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:55:28.573 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:55:28.573 [http-nio-8080-exec-5] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:55:54.299 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:55:54.302 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:55:54.306 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:58:56.082 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 16:58:56.082 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 16:58:56.382 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 16:58:59.449 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 16:59:00.433 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:59:00.433 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:59:00.452 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 127.0.0.1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:59:17.261 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:59:17.262 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:59:17.262 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 127.0.0.1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:59:29.630 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:59:29.632 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:59:29.634 [http-nio-8080-exec-7] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 16:59:43.659 [http-nio-8080-exec-10] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 16:59:43.665 [http-nio-8080-exec-10] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 16:59:43.665 [http-nio-8080-exec-10] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:03:12.308 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 17:03:12.308 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 17:03:12.616 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 17:03:17.299 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 17:03:18.491 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:03:18.491 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:03:18.509 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:04:10.097 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 17:04:10.097 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 17:04:10.472 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 17:04:13.954 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 17:04:15.138 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:04:15.146 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:04:15.165 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:04:52.938 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 17:04:52.938 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 17:04:53.184 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 17:05:06.286 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 17:05:07.152 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:05:07.152 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:05:07.177 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:06:03.216 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 17:06:03.216 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 17:06:03.675 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 17:06:07.220 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 17:06:08.177 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:06:08.181 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:06:08.207 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 127.0.0.1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:06:28.977 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:06:28.978 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:06:28.979 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 127.0.0.1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:15:21.472 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 17:15:21.480 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 17:15:21.735 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 17:15:39.696 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 17:15:40.616 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:15:40.616 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:15:40.633 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:20:20.243 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 17:20:20.243 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 17:20:20.477 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 17:20:33.670 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 17:20:34.494 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:20:34.494 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:20:34.506 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:21:01.481 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 17:21:01.481 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 17:21:01.722 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 17:21:06.964 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 17:21:07.882 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:21:07.890 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:21:07.912 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:22:47.158 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 17:22:47.158 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 17:22:47.409 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 17:22:54.859 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 17:22:55.801 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:22:55.801 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:22:55.817 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:22:57.663 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:22:57.668 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:22:57.668 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:24:36.252 [main] [34mINFO [0;39m [36mo.a.c.c.StandardService[0;39m - Starting service [Tomcat] 
+22-01-04 Tue 17:24:36.252 [main] [34mINFO [0;39m [36mo.a.c.c.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/9.0.55] 
+22-01-04 Tue 17:24:36.528 [main] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring embedded WebApplicationContext 
+22-01-04 Tue 17:24:45.365 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+22-01-04 Tue 17:24:46.310 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:24:46.310 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:24:46.329 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 
+22-01-04 Tue 17:24:48.137 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - Logging Filter Servlet called  
+22-01-04 Tue 17:24:48.145 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - ************************** 
+22-01-04 Tue 17:24:48.146 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[.[.[/][0;39m - User Logged in: User IP: 0:0:0:0:0:0:0:1 Resource File: /login Protocol: HTTP/1.1 

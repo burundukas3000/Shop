@@ -36,7 +36,7 @@
                 <c:forEach var="purchase" items="${user.purchases}" varStatus="index">
                     <p>
                         <form:form method="GET" action="${pageContext.request.contextPath}/customer/purchase/${purchase.id}">
-                            ${index.index+1} <input type="submit" value="${purchase.dateCreated}" />
+                            ${index.index+1} <input type="submit" value="${purchase.feDateCreated}" />
                         </form:form>
                     </p>
                 </c:forEach>

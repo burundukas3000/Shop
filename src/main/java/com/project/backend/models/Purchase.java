@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -41,6 +42,40 @@ public class Purchase {
             joinColumns = { @JoinColumn(name="purchase_id") },
             inverseJoinColumns = { @JoinColumn(name="product_id")})
     private Set<Product> products = new HashSet<Product>();
+
+   // all three Dates for frontend usage - to represent the Date without Time
+    @Transient
+    public LocalDate feDateCreated;
+
+    @Transient
+    public LocalDate feDateCompleted;
+
+    @Transient
+    public LocalDate feDateCancelled;
+
+    public LocalDate getFeDateCreated() {
+        return feDateCreated;
+    }
+
+    public void setFeDateCreated(LocalDate feDateCreated) {
+        this.feDateCreated = feDateCreated;
+    }
+
+    public LocalDate getFeDateCompleted() {
+        return feDateCompleted;
+    }
+
+    public void setFeDateCompleted(LocalDate feDateCompleted) {
+        this.feDateCompleted = feDateCompleted;
+    }
+
+    public LocalDate getFeDateCancelled() {
+        return feDateCancelled;
+    }
+
+    public void setFeDateCancelled(LocalDate feDateCancelled) {
+        this.feDateCancelled = feDateCancelled;
+    }
 
     // for @ManyToMany association - methods to add/delete product
     // returns true if success

@@ -35,6 +35,9 @@ public class User {
             cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH })
     private Set<Role> roles = new HashSet<Role>();
 
+    @Transient
+    private String role;
+
     public User() {
     }
 
@@ -42,6 +45,7 @@ public class User {
         this.userName = username;
         this.password = password;
         this.email = email;
+        this.role = this.roles.iterator().next().getRoleName();
     }
 
     public User(String userName, String password, String email,
@@ -53,6 +57,7 @@ public class User {
         this.lastName = lastName;
         this.address = address;
         this.roles = roles;
+        this.role = this.roles.iterator().next().getRoleName();
     }
 
     // for @ManyToMany association - methods to add/delete role
@@ -147,6 +152,10 @@ public class User {
     public List<Purchase> getPurchases() { return purchases; }
 
     public void setPurchases(List<Purchase> purchases) { this.purchases = purchases; }
+
+    public String getRole() {
+        return this.roles.iterator().next().getRoleName();
+    }
 
     @Override
     public String toString() {

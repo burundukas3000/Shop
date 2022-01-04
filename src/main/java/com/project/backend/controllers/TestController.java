@@ -3,15 +3,20 @@ package com.project.backend.controllers;
 import com.project.backend.models.*;
 import com.project.backend.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.context.ServletContextAware;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import java.util.List;
 
 // This controller will be deleted. Created for testing Hibernate mappings only.
 @Controller
-public class TestController {
+public class TestController implements ServletContextAware {
 
     @Autowired
     DiscountRepository discountRepo;
@@ -29,6 +34,20 @@ public class TestController {
     UserRepository userRepo;
     @Autowired
     ChartItemRepository chartRepo;
+    @Autowired
+    private ServletConfig servletConfig;
+    @Autowired
+    private ServletContext servletContext;
+
+    @GetMapping("/test/servlet/config")
+    public ResponseEntity<String> getServletConfig() {
+        return new ResponseEntity<String>("Servlet Config: " + servletConfig.getServletName(), HttpStatus.OK);
+    }
+
+    @GetMapping("/test/servlet/context")
+    public ResponseEntity<String> getServletContext() {
+        return new ResponseEntity<String>("Servlet Context: " + servletContext.getContextPath(), HttpStatus.OK);
+    }
 
     @GetMapping("/test")
     public String showUploadForm(Model model) {
@@ -89,5 +108,10 @@ public class TestController {
         System.out.println(user.toString());*/
 
         return "test";
+    }
+
+    @Override
+    public void setServletContext(ServletContext servletContext) {
+
     }
 }

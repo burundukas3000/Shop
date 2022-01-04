@@ -7,6 +7,9 @@ import com.project.backend.services.ChartItemService;
 import com.project.backend.services.ProductService;
 import com.project.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.csrf.CsrfToken;
+import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -38,7 +42,9 @@ public class ChartItemController {
         return "shoppingcart";
     }
     @PostMapping("/cart/addproduct/{id}")
-    public String addProductToCart(@PathVariable("id") Long id, Model model) {
+    public String addProductToCart(@PathVariable("id") Long id, Model model, HttpServletRequest request) {
+            CsrfToken csrfToken = new HttpSessionCsrfTokenRepository().loadToken(request);
+            System.out.println(csrfToken+" got it");
         User user = userService.loggedInUser();
         Product product = productService.findProductById(id);
         cartService.addCartItem(product, 1, user);
